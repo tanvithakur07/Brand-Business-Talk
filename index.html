@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brand Business Talk – BBT</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  
+  </style>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <img src="images/logo.jpeg" alt="logo" class="nav-logo"/>
+    <ul class="nav-links">
+      <li><a href="#coverage">Topics</a></li>
+      <li><a href="#featured">Stories</a></li>
+      <li><a href="#mission">About</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+    </ul>
+    <a href="#newsletter" class="nav-cta">Subscribe</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-tag">// Business Intelligence Platform</p>
+      <h1 class="hero-title">
+        Where <em>Brands</em><br>
+        Meet<br>
+        Business
+      </h1>
+      <p class="hero-sub">
+        Simplifying complex business concepts into engaging, actionable insights — for entrepreneurs, professionals, and the next generation of leaders.
+      </p>
+      <div class="hero-actions">
+        <a href="#featured" class="btn-primary">Explore Stories</a>
+        <a href="#mission" class="btn-ghost">
+          Our Mission
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Topics Covered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10K+</div>
+          <div class="stat-label">Readers Monthly</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Actionable Insights</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-grid-overlay"></div>
+      <div class="hero-gradient"></div>
+      <div class="vertical-line"></div>
+      <div class="hero-bg-text">BBT</div>
+      <div class="hero-card-stack">
+        <div class="hcard hcard-1">
+          <div class="hcard-label">Trending</div>
+          <div class="hcard-title">How D2C Brands Are Rewriting Indian Retail</div>
+          <div class="hcard-meta">Brand Strategy · 5 min read</div>
+          <div class="hcard-bar"></div>
+        </div>
+        <div class="hcard hcard-2">
+          <div class="hcard-label">Analysis</div>
+          <div class="hcard-title">The Rise of Creator Economy in Emerging Markets</div>
+          <div class="hcard-meta">Market Trends · 8 min read</div>
+          <div class="hcard-bar"></div>
+        </div>
+        <div class="hcard hcard-3">
+          <div class="hcard-label">Case Study</div>
+          <div class="hcard-title">What Zomato's IPO Taught Startup India</div>
+          <div class="hcard-meta">Startup Ecosystem · 6 min read</div>
+          <div class="hcard-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="ticker-item">Brand Strategy</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Startup Ecosystem</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Market Trends</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Business Growth</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Career Development</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Marketing Innovation</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Tech & Business</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Industry Insights</span><span class="ticker-dot">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span class="ticker-item">Brand Strategy</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Startup Ecosystem</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Market Trends</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Business Growth</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Career Development</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Marketing Innovation</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Tech & Business</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Industry Insights</span><span class="ticker-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about-strip reveal" id="about">
+    <div class="section-label">About BBT</div>
+    <div class="about-content">
+      <h2 class="about-heading">
+        Business intelligence,<br>
+        <span>made human.</span>
+      </h2>
+      <p class="about-text">
+        Brand Business Talk is a modern digital media and insights platform dedicated to exploring the world of brands, businesses, and the fast-changing market landscape. We transform complex business realities into engaging, practical content — bridging the gap between knowledge and real-world application.
+      </p>
+      <div class="pillars">
+        <div class="pillar">Brand Strategies</div>
+        <div class="pillar">Startup Stories</div>
+        <div class="pillar">Market Analysis</div>
+        <div class="pillar">Career Insights</div>
+        <div class="pillar">Tech & Innovation</div>
+        <div class="pillar">Industry News</div>
+        <div class="pillar">Case Studies</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-inner">
+      <span class="marquee-item">Brand Business Talk</span>
+      <span class="marquee-item filled">✦</span>
+      <span class="marquee-item">Business Intelligence</span>
+      <span class="marquee-item filled">✦</span>
+      <span class="marquee-item">Insights & Ideas</span>
+      <span class="marquee-item filled">✦</span>
+      <span class="marquee-item">Brand Business Talk</span>
+      <span class="marquee-item filled">✦</span>
+      <span class="marquee-item">Business Intelligence</span>
+      <span class="marquee-item filled">✦</span>
+      <span class="marquee-item">Insights & Ideas</span>
+      <span class="marquee-item filled">✦</span>
+    </div>
+  </div>
+
+  <!-- COVERAGE -->
+  <section class="coverage reveal" id="coverage">
+    <div class="coverage-header">
+      <h2 class="coverage-title">
+        Everything that shapes<br>
+        <em>modern business.</em>
+      </h2>
+      <a href="#" class="see-all">
+        View All Topics
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </a>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <span class="topic-icon">🏷️</span>
+        <div class="topic-name">Brand Strategy</div>
+        <div class="topic-desc">How iconic brands build identity, loyalty, and lasting market presence in a crowded world.</div>
+        <div class="topic-count">24 Stories →</div>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🚀</span>
+        <div class="topic-name">Startup Ecosystem</div>
+        <div class="topic-desc">Funding rounds, founder journeys, pivots, and lessons from India's and the world's startup landscape.</div>
+        <div class="topic-count">31 Stories →</div>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">📈</span>
+        <div class="topic-name">Market Trends</div>
+        <div class="topic-desc">Deep dives into the economic forces, consumer shifts, and industry waves reshaping commerce.</div>
+        <div class="topic-count">18 Stories →</div>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">💡</span>
+        <div class="topic-name">Marketing Innovation</div>
+        <div class="topic-desc">Creative campaigns, digital strategies, and the art of connecting brands to audiences that matter.</div>
+        <div class="topic-count">22 Stories →</div>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">⚙️</span>
+        <div class="topic-name">Tech & Business</div>
+        <div class="topic-desc">Where technology meets commerce — AI, SaaS, fintech, and the digital transformation of industries.</div>
+        <div class="topic-count">19 Stories →</div>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🎓</span>
+        <div class="topic-name">Career Development</div>
+        <div class="topic-desc">Actionable guidance for professionals navigating careers, skill-building, and job opportunities.</div>
+        <div class="topic-count">15 Stories →</div>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🎬</span>
+        <div class="topic-name">Entertainment Business</div>
+        <div class="topic-desc">The business behind content — streaming wars, creator economy, IP strategy, and media monetization.</div>
+        <div class="topic-count">12 Stories →</div>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🌍</span>
+        <div class="topic-name">Industry News</div>
+        <div class="topic-desc">Breaking developments, mergers, policy changes, and the headlines that reshape entire sectors.</div>
+        <div class="topic-count">40+ Stories →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED STORIES -->
+  <section class="featured reveal" id="featured">
+    <div class="featured-header">
+      <h2 class="featured-title">Featured Stories</h2>
+      <div class="featured-line"></div>
+      <a href="#" class="see-all">All Stories →</a>
+    </div>
+    <div class="articles-layout">
+      <div class="article-main">
+        <div class="art-cat">Brand Strategy</div>
+        <div class="tag-badge">Editor's Pick</div>
+        <h3 class="art-title-main">How Reliance Jio Disrupted an Entire Industry — And What Brands Can Learn</h3>
+        <p class="art-excerpt">A deep-dive into the pricing strategy, distribution genius, and brand positioning that made Jio's launch one of the most disruptive business moves in recent history.</p>
+        <div class="art-meta">
+          <span>BBT Editorial</span>
+          <span>·</span>
+          <span>Apr 2025</span>
+          <span>·</span>
+          <span>9 min read</span>
+        </div>
+        <a href="#" class="art-read">
+          Read the Story
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </a>
+      </div>
+      <div class="articles-side">
+        <div class="article-side">
+          <div>
+            <div class="art-cat">Market Trends</div>
+            <div class="art-title-side">The New Indian Consumer: What Brands Are Getting Wrong in 2025</div>
+            <div class="art-meta" style="margin-top:10px;">BBT Desk · 6 min</div>
+          </div>
+          <a href="#" class="art-read">Read →</a>
+        </div>
+        <div class="article-side">
+          <div>
+            <div class="art-cat">Startup Ecosystem</div>
+            <div class="art-title-side">From Dorm Room to $1B: The Zepto Story of Speed and Scaling</div>
+            <div class="art-meta" style="margin-top:10px;">BBT Desk · 7 min</div>
+          </div>
+          <a href="#" class="art-read">Read →</a>
+        </div>
+        <div class="article-side">
+          <div>
+            <div class="art-cat">Career Development</div>
+            <div class="art-title-side">Why Business Acumen Is the Most Underrated Skill for Professionals</div>
+            <div class="art-meta" style="margin-top:10px;">BBT Desk · 4 min</div>
+          </div>
+          <a href="#" class="art-read">Read →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission-band reveal" id="mission">
+    <div class="mission-text">
+      <p class="mission-label">// Our Mission</p>
+      <h2 class="mission-heading">
+        Educate.<br>
+        <em>Inform.</em><br>
+        Inspire.
+      </h2>
+      <p class="mission-body">
+        BBT's mission is to empower the next generation of entrepreneurs, leaders, and professionals. By delivering relevant and insightful content, we help our audience make smarter career choices, better business decisions, and stronger strategic moves in an increasingly competitive world.
+      </p>
+    </div>
+    <div class="mission-values">
+      <div class="value-box">
+        <div class="value-num">01</div>
+        <div class="value-title">Simplify Complexity</div>
+        <div class="value-desc">We translate dense business concepts into clear, actionable narratives anyone can use.</div>
+      </div>
+      <div class="value-box">
+        <div class="value-num">02</div>
+        <div class="value-title">Real-World Relevance</div>
+        <div class="value-desc">Every story we publish bridges knowledge to practical application in the real world.</div>
+      </div>
+      <div class="value-box">
+        <div class="value-num">03</div>
+        <div class="value-title">Trusted Intelligence</div>
+        <div class="value-desc">We are a dependable source for business intelligence, rooted in facts and deep research.</div>
+      </div>
+      <div class="value-box">
+        <div class="value-num">04</div>
+        <div class="value-title">Inspire Action</div>
+        <div class="value-desc">We don't just inform — we motivate readers to act, build, and lead with confidence.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section class="audience reveal" id="audience">
+    <div class="aud-header">
+      <h2 class="aud-title">Built for <em>every curious mind.</em></h2>
+      <p class="aud-sub">BBT serves a diverse community of thinkers, builders, and doers.</p>
+    </div>
+    <div class="aud-cards">
+      <div class="aud-card">
+        <span class="aud-emoji">🧑‍💼</span>
+        <div class="aud-name">Entrepreneurs</div>
+        <div class="aud-desc">Building ventures and need sharp market intelligence.</div>
+      </div>
+      <div class="aud-card">
+        <span class="aud-emoji">📊</span>
+        <div class="aud-name">Professionals</div>
+        <div class="aud-desc">Staying ahead in competitive industries and careers.</div>
+      </div>
+      <div class="aud-card">
+        <span class="aud-emoji">🎓</span>
+        <div class="aud-name">Students</div>
+        <div class="aud-desc">Learning business concepts before entering the real world.</div>
+      </div>
+      <div class="aud-card">
+        <span class="aud-emoji">🎨</span>
+        <div class="aud-name">Creators</div>
+        <div class="aud-desc">Understanding the business behind content and creativity.</div>
+      </div>
+      <div class="aud-card">
+        <span class="aud-emoji">🔍</span>
+        <div class="aud-name">Enthusiasts</div>
+        <div class="aud-desc">Curious minds passionate about how business shapes our world.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter reveal" id="newsletter">
+    <p class="nl-tag">// Stay Informed</p>
+    <h2 class="nl-title">Business insights,<br><em>in your inbox.</em></h2>
+    <p class="nl-sub">Join thousands of readers who get the sharpest business stories delivered weekly.</p>
+    <div class="nl-form">
+      <input type="email" class="nl-input" placeholder="Enter your email address" />
+      <button class="nl-btn">Subscribe</button>
+    </div>
+    <p class="nl-note">No spam. Unsubscribe anytime. Read by 10,000+ professionals.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="images/logo.jpeg" alt="logo" class="nav-logo"/>
+        <p class="footer-tagline">Brand Business Talk — where brands, businesses, and the market come to life.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Twitter">𝕏</a>
+          <a href="#" class="social-link" title="LinkedIn">in</a>
+          <a href="#" class="social-link" title="Instagram">ig</a>
+          <a href="#" class="social-link" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Content</h4>
+        <ul>
+          <li><a href="#">Brand Strategy</a></li>
+          <li><a href="#">Startup Stories</a></li>
+          <li><a href="#">Market Trends</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Industry News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Career Guide</a></li>
+          <li><a href="#">Business Glossary</a></li>
+          <li><a href="#">Job Opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About BBT</a></li>
+          <li><a href="#">Write for Us</a></li>
+          <li><a href="#">Advertise</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Brand Business Talk. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  
+</body>
+</html>

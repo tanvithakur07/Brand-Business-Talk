@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Asian Paints 20-Factor Rating Analysis | BBT 40 Brand Series</title>
+  <meta name="description" content="Complete 20-factor professional rating analysis of Asian Paints' Har Ghar Kuch Kehta Hai and Where the Heart Is campaigns. By Brand Business Talk."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    :root {
+      --accent: #b5451b;
+      --accent-dark: #7c2e10;
+      --gold: #c9a84c;
+      --ap-green: #2d6a4f;
+    }
+
+    /* Overrides */
+    .btn-primary:hover { background: var(--accent); }
+    .series-badge { color: var(--accent); }
+    .series-badge::before { background: var(--accent); }
+    .section-label { color: var(--accent); }
+    .section-label::after { background: var(--accent); }
+    .campaign-tag { color: var(--accent); }
+    .highlight-box { background: var(--accent); }
+    .pillar-card::before { background: var(--accent); }
+    .cta-section { background: var(--ap-green); }
+    .hero-brand em { color: var(--accent); }
+    .section-heading em { color: var(--accent); }
+    .campaign-title em { color: var(--accent); }
+    .conclusion-text p strong { color: var(--accent); }
+    .acc { color: var(--accent) !important; }
+    .btn-cta { color: var(--ap-green); }
+    .btn-cta:hover { color: var(--paper); }
+    .nav-cta-link:hover { color: var(--accent); border-color: var(--accent); }
+    .btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
+    .footer-logo-small span { color: var(--gold); }
+
+    /* ── FACTOR GRID ── */
+    .factors-section { background: var(--paper); }
+    .campaign-factors-wrap {
+      margin-top: 56px;
+    }
+    .campaign-factors-wrap + .campaign-factors-wrap {
+      margin-top: 80px;
+      padding-top: 80px;
+      border-top: 1px solid var(--line);
+    }
+    .cf-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .cf-title-block {}
+    .cf-campaign-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .cf-campaign-name {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+    .cf-campaign-name em { font-style: italic; color: var(--accent); }
+    .cf-overall-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 20px 36px;
+      min-width: 140px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .cf-badge-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.5);
+      margin-bottom: 6px;
+    }
+    .cf-badge-score {
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .cf-badge-max {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(245,240,232,0.4);
+      margin-top: 4px;
+    }
+
+    /* Pillar groups */
+    .pillar-group {
+      margin-bottom: 32px;
+    }
+    .pillar-group-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 10px 0 10px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pillar-group-label span {
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 9px;
+      padding: 2px 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .factor-row {
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(10,10,10,0.05);
+    }
+    .factor-row:last-child { border-bottom: none; }
+    .factor-info {}
+    .factor-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .factor-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .factor-score-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+    .factor-score-num {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .factor-score-num .denom {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .factor-bar-track {
+      width: 100%;
+      height: 3px;
+      background: var(--line);
+      position: relative;
+    }
+    .factor-bar-fill {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      background: var(--accent);
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .factor-bar-fill.animate { transform: scaleX(1); }
+    .score-10 { background: #1b5e20; }
+    .score-high { background: var(--ap-green); }
+    .score-mid { background: var(--accent); }
+
+    /* Perfect 10 highlight */
+    .factor-row.perfect .factor-name::after {
+      content: ' ✦ PERFECT';
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-left: 8px;
+    }
+    .factor-row.perfect .factor-score-num { color: var(--gold); }
+
+    /* ── RADAR / SUMMARY VISUAL ── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 60px;
+    }
+    .summary-cell {
+      background: var(--paper-alt);
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .summary-cell::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 60px; height: 60px;
+      background: rgba(10,10,10,0.03);
+      border-radius: 50% 0 0 0;
+    }
+    .sc-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .sc-campaign {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .sc-rows { display: flex; flex-direction: column; gap: 0; }
+    .sc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+    }
+    .sc-row:last-child { border-bottom: none; }
+    .sc-row-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .sc-row-val {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .sc-final-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 2px solid var(--ink);
+    }
+    .sc-final-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+    .sc-final-val {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    /* winner badge */
+    .winner-band {
+      background: var(--gold);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .winner-band-text {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .winner-band-text em { font-style: italic; }
+    .winner-band-score {
+      font-family: var(--font-display);
+      font-size: 60px;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .cf-header { flex-direction: column; }
+      .cf-overall-badge { width: 100%; flex-direction: row; justify-content: space-between; }
+      .summary-grid { grid-template-columns: 1fr; }
+      .factor-row { grid-template-columns: 1fr 90px; }
+      .winner-band { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .pillar-group-label { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="bbt-nav">
+    <img src="images/logo.jpeg" alt="logo" class="nav-logo"/>
+    <span class="nav-series">40 Day · 40 Brand Series · Day 06</span>
+    <a href="#cta" class="nav-cta-link">Get Brand Analysis ↗</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="hero-content">
+      <div class="series-badge">Day 06 of 40 — Deep Rating Report</div>
+      <h1 class="hero-brand">
+        Asian Paints<br>
+        <em>20-Factor</em><br>
+        Analysis
+      </h1>
+      <p class="hero-subtitle">
+        Every campaign factor scored, explained, and benchmarked. The most detailed professional rating breakdown of Asian Paints' two landmark campaigns.
+      </p>
+      <div class="hero-meta-row">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Campaign 1</span>
+          <span class="hero-meta-value"><span class="acc">9.6</span>/10</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Campaign 2</span>
+          <span class="hero-meta-value"><span class="acc">9.3</span>/10</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Total Factors</span>
+          <span class="hero-meta-value">20</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#factors" class="btn-primary">View All Scores ↓</a>
+        <a href="#cta" class="btn-ghost">Work With BBT →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-big-text">9.6</div>
+      <div class="rating-card">
+        <div class="rating-card-label">Har Ghar Kuch Kehta Hai</div>
+        <div class="rating-number">9<span>.6</span></div>
+        <div class="rating-desc">One of India's most successful emotional branding campaigns</div>
+        <div class="rating-bars">
+          <div class="r-bar-item">
+            <span class="r-bar-label">Positioning & USP</span>
+            <div class="r-bar-track"><div class="r-bar-fill" style="width:98%"></div></div>
+          </div>
+          <div class="r-bar-item">
+            <span class="r-bar-label">Core Hook / Big Idea</span>
+            <div class="r-bar-track"><div class="r-bar-fill" style="width:100%"></div></div>
+          </div>
+          <div class="r-bar-item">
+            <span class="r-bar-label">Copywriting</span>
+            <div class="r-bar-track"><div class="r-bar-fill" style="width:98%"></div></div>
+          </div>
+          <div class="r-bar-item">
+            <span class="r-bar-label">Messaging Angle</span>
+            <div class="r-bar-track"><div class="r-bar-fill" style="width:97%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-strip">
+    <div class="ticker-inner-cs">
+      <span class="t-item">Har Ghar Kuch Kehta Hai</span><span class="t-dot">✦</span>
+      <span class="t-item">Where the Heart Is</span><span class="t-dot">✦</span>
+      <span class="t-item">20-Factor Rating</span><span class="t-dot">✦</span>
+      <span class="t-item">Strategy Foundation</span><span class="t-dot">✦</span>
+      <span class="t-item">Offer & Message</span><span class="t-dot">✦</span>
+      <span class="t-item">Creative Execution</span><span class="t-dot">✦</span>
+      <span class="t-item">Channel Distribution</span><span class="t-dot">✦</span>
+      <span class="t-item">Funnel System</span><span class="t-dot">✦</span>
+      <span class="t-item">Data & Scaling</span><span class="t-dot">✦</span>
+      <span class="t-item">9.6 / 10 Overall</span><span class="t-dot">✦</span>
+      <span class="t-item">Har Ghar Kuch Kehta Hai</span><span class="t-dot">✦</span>
+      <span class="t-item">Where the Heart Is</span><span class="t-dot">✦</span>
+      <span class="t-item">20-Factor Rating</span><span class="t-dot">✦</span>
+      <span class="t-item">Strategy Foundation</span><span class="t-dot">✦</span>
+      <span class="t-item">Offer & Message</span><span class="t-dot">✦</span>
+      <span class="t-item">Creative Execution</span><span class="t-dot">✦</span>
+      <span class="t-item">Channel Distribution</span><span class="t-dot">✦</span>
+      <span class="t-item">Funnel System</span><span class="t-dot">✦</span>
+      <span class="t-item">Data & Scaling</span><span class="t-dot">✦</span>
+      <span class="t-item">9.6 / 10 Overall</span><span class="t-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="section-wrap reveal">
+      <div class="intro-grid">
+        <div class="intro-aside">
+          <div class="section-label">Why This Report</div>
+          <h2 class="section-heading">Every factor. Every score. Every <em>reason why.</em></h2>
+          <div class="intro-image-block" style="margin-top:32px;">
+            <img src="images/14.png" alt="Asian Paints brand campaign" loading="lazy"/>
+            <div class="intro-image-caption">// Asian Paints — India's #1 Decorative Paint Brand</div>
+          </div>
+        </div>
+        <div class="intro-body">
+          <p>Asian Paints is one of India's most successful examples of emotional brand storytelling. Its campaigns "Har Ghar Kuch Kehta Hai" and "Where the Heart Is" transformed a paint company into a brand associated with emotion, aspiration, and home identity.</p>
+          <p>This report goes beyond the summary. Every one of the <strong>20 professional campaign factors</strong> is scored individually — with a clear explanation of why each factor received its rating. The scoring framework covers six strategic pillars: Strategy Foundation, Offer & Message, Content & Creatives, Channel & Distribution, Funnel & System, and Data & Scaling.</p>
+          <p>The purpose of this deep-analysis format is to give founders, marketers, and brand teams a transparent, replicable framework for understanding what makes a campaign exceptional — and where even great campaigns have room to grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       20-FACTOR SECTIONS
+  ════════════════════════════════ -->
+  <section class="factors-section" id="factors">
+    <div class="section-wrap">
+      <div class="section-label reveal">20-Factor Deep Analysis</div>
+      <h2 class="section-heading reveal">Every score. <em>Every insight.</em></h2>
+
+      <!-- ── CAMPAIGN 1 ── -->
+      <div class="campaign-factors-wrap reveal">
+        <div class="cf-header">
+          <div class="cf-title-block">
+            <div class="cf-campaign-tag">Campaign 01 — Emotional Branding</div>
+            <h3 class="cf-campaign-name"><em>Har Ghar Kuch Kehta Hai</em></h3>
+          </div>
+          <div class="cf-overall-badge">
+            <span class="cf-badge-label">Overall Rating</span>
+            <span class="cf-badge-score">9.6</span>
+            <span class="cf-badge-max">/10</span>
+          </div>
+        </div>
+
+        <!-- PILLAR 1: STRATEGY -->
+        <div class="pillar-group">
+          <div class="pillar-group-label">
+            <span>01</span> Strategy Foundation
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Objective</div>
+              <div class="factor-desc">Focused on awareness, emotional connection, and long-term brand recall rather than direct sales alone. This is why the campaign became iconic and was relaunched multiple times.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.8<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:98%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Target Audience</div>
+              <div class="factor-desc">Perfectly targeted Indian families, homeowners, young couples, and people emotionally connected with their living spaces — a broad yet precisely defined group.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.5<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:95%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Market Research</div>
+              <div class="factor-desc">The insight that homes are emotional spaces — not just physical structures — is extremely strong and culturally relevant in the Indian context.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.4<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:94%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Competitor Analysis</div>
+              <div class="factor-desc">While competitors focused on features and durability, Asian Paints shifted entirely to emotional storytelling — a strategic move that gave it a unique, defensible market advantage.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.2<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:92%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Positioning & USP</div>
+              <div class="factor-desc">The strongest factor in this campaign. Asian Paints positioned itself as the voice of the Indian home — not a paint company. This distinction created category ownership that competitors cannot price-compete against.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.8<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:98%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 2: OFFER & MESSAGE -->
+        <div class="pillar-group">
+          <div class="pillar-group-label">
+            <span>02</span> Offer &amp; Message
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Offer Strength</div>
+              <div class="factor-desc">Not discount-led. The campaign's strength lies in emotional promise and trust — a far more durable offer than price-based messaging, which erodes over time.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">8.9<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:89%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row perfect">
+            <div class="factor-info">
+              <div class="factor-name">Core Hook / Big Idea</div>
+              <div class="factor-desc">"Every home tells a story" is one of the strongest hooks in Indian advertising history. Simple, emotionally resonant, universally relatable, and endlessly repeatable across contexts.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">10<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-10" style="width:100%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Messaging Angle</div>
+              <div class="factor-desc">Pure emotional storytelling with memory, identity, and relationships as the central message. The brand never talks about paint — it talks about life. That is the highest form of messaging.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.7<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:97%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 3: CREATIVES -->
+        <div class="pillar-group">
+          <div class="pillar-group-label">
+            <span>03</span> Content &amp; Creatives
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Ad Creatives</div>
+              <div class="factor-desc">Cinematic storytelling, real-life moments, and emotionally powerful scenes made the campaign highly memorable. The production quality felt like content — not advertising.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.6<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:96%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Copywriting</div>
+              <div class="factor-desc">Simple, memorable, and culturally sticky copy. The tagline became a cultural statement — a rare achievement where the copy outlives the campaign itself.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.8<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:98%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Content Formats</div>
+              <div class="factor-desc">Television, YouTube, digital video, and social storytelling all worked together in a cohesive multi-format strategy that maximized reach across consumer touchpoints.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.1<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:91%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Branding Consistency</div>
+              <div class="factor-desc">The emotional tone stayed consistent across every version of the campaign — from original launch through multiple revivals. Consistency over decades is a rare brand discipline.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.7<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:97%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 4: DISTRIBUTION -->
+        <div class="pillar-group">
+          <div class="pillar-group-label">
+            <span>04</span> Channel &amp; Distribution
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Platform Selection</div>
+              <div class="factor-desc">TV + digital + social + omnichannel distribution ensured maximum reach. Platform selection matched the campaign's mass-awareness objective precisely.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.3<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:93%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Organic + Paid Mix</div>
+              <div class="factor-desc">High organic recall — driven by cultural resonance — supported by strong paid reach. The organic word-of-mouth multiplied the value of paid placements significantly.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.0<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:90%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Influencer / Collaboration Strategy</div>
+              <div class="factor-desc">Less influencer-led, more mass emotional storytelling. The brand chose authentic storytelling over celebrity endorsement — a bold and ultimately stronger strategy for this category.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">8.8<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:88%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 5: FUNNEL -->
+        <div class="pillar-group">
+          <div class="pillar-group-label">
+            <span>05</span> Funnel &amp; System
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Funnel Flow</div>
+              <div class="factor-desc">Awareness → emotional connection → home inspiration → product consideration. A clearly structured journey that moves consumers naturally from emotion to intent without hard selling.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.2<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:92%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Landing Page / Website Optimization</div>
+              <div class="factor-desc">Strong support through Asian Paints' home inspiration ecosystem — a dedicated digital destination that captures campaign interest and converts it to product exploration.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.0<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:90%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Retargeting System</div>
+              <div class="factor-desc">Strong digital retargeting likely active through website and consultation services, leveraging the high-intent audience generated by the campaign's emotional awareness layer.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">8.9<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:89%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 6: DATA -->
+        <div class="pillar-group">
+          <div class="pillar-group-label">
+            <span>06</span> Data &amp; Scaling
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Performance Tracking</div>
+              <div class="factor-desc">Long-term recall metrics and multiple successful relaunches are the strongest proof of campaign effectiveness. The data supported revival decisions, which in turn amplified results.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.5<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:95%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Testing &amp; Scaling Strategy</div>
+              <div class="factor-desc">The campaign's multiple revivals across different years and contexts are direct proof of successful scaling. Each revival maintained the core identity while adapting execution — a textbook scaling model.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.4<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:94%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CAMPAIGN 2 ── -->
+      <div class="campaign-factors-wrap reveal">
+        <div class="cf-header">
+          <div class="cf-title-block">
+            <div class="cf-campaign-tag">Campaign 02 — Aspirational Content Marketing</div>
+            <h3 class="cf-campaign-name"><em>Where the Heart Is</em></h3>
+          </div>
+          <div class="cf-overall-badge">
+            <span class="cf-badge-label">Overall Rating</span>
+            <span class="cf-badge-score">9.3</span>
+            <span class="cf-badge-max">/10</span>
+          </div>
+        </div>
+
+        <!-- PILLAR 1 -->
+        <div class="pillar-group">
+          <div class="pillar-group-label"><span>01</span> Strategy Foundation</div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Objective</div>
+              <div class="factor-desc">Strong objective around aspirational branding and home décor association. The campaign specifically targeted making the brand synonymous with premium home inspiration — a clear, differentiating goal.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.5<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:95%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Target Audience</div>
+              <div class="factor-desc">Young homeowners, aspirational urban audience, décor lovers, and celebrity content viewers — a highly engaged, high-intent audience with strong purchase motivation.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.4<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:94%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Market Research</div>
+              <div class="factor-desc">Built on the insight that audiences love seeing celebrity homes and drawing real-world inspiration from them. This behavioral truth drove the entire content format — a research-to-execution win.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.3<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:93%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Competitor Analysis</div>
+              <div class="factor-desc">Very few paint brands own the lifestyle-content space at this level. Asian Paints identified and occupied a white space — creating a competitive moat through content that others cannot easily replicate.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.0<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:90%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Positioning & USP</div>
+              <div class="factor-desc">Asian Paints became a décor inspiration brand through this campaign — extending its positioning beyond "home paint" into "home identity," a far more valuable and defensible territory.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.5<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:95%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 2 -->
+        <div class="pillar-group">
+          <div class="pillar-group-label"><span>02</span> Offer &amp; Message</div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Offer Strength</div>
+              <div class="factor-desc">The offer is aspiration and premium home inspiration — an intangible but extremely powerful emotional product that consumers actively seek out rather than passively receive.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.0<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:90%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Core Hook / Big Idea</div>
+              <div class="factor-desc">Home inspiration through real celebrity spaces — a hook that is specific enough to drive engagement and broad enough to apply across all home types and budgets.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.4<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:94%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Messaging Angle</div>
+              <div class="factor-desc">Emotional + aspirational + lifestyle-driven messaging that positions the brand as a curator of beautiful living — far more compelling than product-feature communication.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.3<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:93%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 3 -->
+        <div class="pillar-group">
+          <div class="pillar-group-label"><span>03</span> Content &amp; Creatives</div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Ad Creatives</div>
+              <div class="factor-desc">High-quality visual storytelling and home cinematography that made each episode feel like premium content — elevating the brand's aesthetic authority in the décor space.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.6<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:96%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Copywriting</div>
+              <div class="factor-desc">Clean, aspirational, and purposefully understated — letting the visual storytelling lead while the copy reinforced the emotional brand promise without overselling.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.1<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:91%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row perfect">
+            <div class="factor-info">
+              <div class="factor-name">Content Formats</div>
+              <div class="factor-desc">One of the best branded content series formats in Indian advertising. Multi-season, multi-celebrity, multi-platform — the format was designed for longevity, shareability, and repeated engagement.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.8<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:98%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Branding Consistency</div>
+              <div class="factor-desc">Strong visual and tonal consistency across all episodes — the "Where the Heart Is" series maintained a unified premium aesthetic that strengthened brand equity with every episode.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.4<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:94%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 4 -->
+        <div class="pillar-group">
+          <div class="pillar-group-label"><span>04</span> Channel &amp; Distribution</div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Platform Selection</div>
+              <div class="factor-desc">Digital-first with strong social amplification — correctly matching the platform to the aspirational, visually-driven content format. YouTube and Instagram were the natural homes for this campaign.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.5<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:95%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Organic + Paid Mix</div>
+              <div class="factor-desc">Strong organic traction driven by celebrity audiences discovering episodes naturally, supplemented by strategic paid placements targeting high-intent home renovation audiences.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.2<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:92%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Influencer / Collaboration Strategy</div>
+              <div class="factor-desc">Strong celebrity collaboration strategy that used stars not as endorsers but as authentic subjects. Their personal homes became the product demonstration — a far more credible format.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.7<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:97%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 5 -->
+        <div class="pillar-group">
+          <div class="pillar-group-label"><span>05</span> Funnel &amp; System</div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Funnel Flow</div>
+              <div class="factor-desc">Celebrity home discovery → brand inspiration → product consideration → consultation → purchase. The content naturally guided consumers through each stage without friction or hard-selling.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.1<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:91%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Landing Page / Website Optimization</div>
+              <div class="factor-desc">Asian Paints' digital ecosystem effectively captured campaign-driven traffic with home inspiration galleries, colour tools, and consultation CTAs — converting content views to product intent.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.0<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:90%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Retargeting System</div>
+              <div class="factor-desc">Retargeting viewers who engaged with episodes back toward product and service pages — a logical and effective conversion layer that leveraged the high-quality audience built by the content series.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">8.8<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:88%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 6 -->
+        <div class="pillar-group">
+          <div class="pillar-group-label"><span>06</span> Data &amp; Scaling</div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Performance Tracking</div>
+              <div class="factor-desc">Multi-season renewal decisions were data-driven — audience engagement, viewership retention, and brand recall metrics justified continued investment in the format across seasons.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.2<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-mid" style="width:92%"></div></div>
+            </div>
+          </div>
+
+          <div class="factor-row">
+            <div class="factor-info">
+              <div class="factor-name">Testing &amp; Scaling Strategy</div>
+              <div class="factor-desc">The multi-season format is the strongest proof of scaling success. Each new season introduced new celebrities, new homes, and new visual contexts — scaling reach while maintaining format integrity.</div>
+            </div>
+            <div class="factor-score-block">
+              <div class="factor-score-num">9.5<span class="denom">/10</span></div>
+              <div class="factor-bar-track"><div class="factor-bar-fill score-high" style="width:95%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WINNER BAND -->
+  <div class="winner-band reveal">
+    <div class="winner-band-text">
+      Campaign 1 — <em>Har Ghar Kuch Kehta Hai</em><br>
+      Highest rated: emotional branding, copywriting &amp; core hook
+    </div>
+    <div class="winner-band-score">9.6 / 10</div>
+  </div>
+
+  <!-- SUMMARY SCORECARD -->
+  <section class="compare-section">
+    <div class="section-wrap reveal">
+      <div class="section-label">Score Summary</div>
+      <h2 class="section-heading">Both campaigns. <em>Side by side.</em></h2>
+      <div class="summary-grid">
+        <div class="summary-cell">
+          <div class="sc-label">Campaign 01</div>
+          <div class="sc-campaign">Har Ghar Kuch Kehta Hai</div>
+          <div class="sc-rows">
+            <div class="sc-row">
+              <span class="sc-row-label">Strategy Foundation</span>
+              <span class="sc-row-val">47.7/50</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Offer &amp; Message</span>
+              <span class="sc-row-val">28.4/30</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Content &amp; Creatives</span>
+              <span class="sc-row-val">38.2/40</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Channel &amp; Distribution</span>
+              <span class="sc-row-val">27.1/30</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Funnel &amp; System</span>
+              <span class="sc-row-val">27.1/30</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Data &amp; Scaling</span>
+              <span class="sc-row-val">18.9/20</span>
+            </div>
+          </div>
+          <div class="sc-final-row">
+            <span class="sc-final-label">Overall Rating</span>
+            <span class="sc-final-val">9.6/10</span>
+          </div>
+        </div>
+
+        <div class="summary-cell">
+          <div class="sc-label">Campaign 02</div>
+          <div class="sc-campaign">Where the Heart Is</div>
+          <div class="sc-rows">
+            <div class="sc-row">
+              <span class="sc-row-label">Strategy Foundation</span>
+              <span class="sc-row-val">46.7/50</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Offer &amp; Message</span>
+              <span class="sc-row-val">27.7/30</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Content &amp; Creatives</span>
+              <span class="sc-row-val">37.9/40</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Channel &amp; Distribution</span>
+              <span class="sc-row-val">28.4/30</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Funnel &amp; System</span>
+              <span class="sc-row-val">26.9/30</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-row-label">Data &amp; Scaling</span>
+              <span class="sc-row-val">18.7/20</span>
+            </div>
+          </div>
+          <div class="sc-final-row">
+            <span class="sc-final-label">Overall Rating</span>
+            <span class="sc-final-val">9.3/10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS BAND -->
+  <div class="insights-band reveal">
+    <div class="insights-inner">
+      <div>
+        <div class="insights-label">Expert Analysis</div>
+        <h2 class="insights-heading">The BBT <em>Verdict</em></h2>
+      </div>
+      <div class="insights-list">
+        <div class="insight-item">
+          <span class="insight-icon">🏠</span>
+          <div class="insight-text-block">
+            <div class="insight-title">Campaign 1 built emotional memory. Campaign 2 built aspiration and lifestyle authority.</div>
+            <div class="insight-desc">Together, they created category dominance. One campaign alone would have been strong. Both campaigns together made Asian Paints nearly impossible to dislodge from its market position.</div>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-icon">✦</span>
+          <div class="insight-text-block">
+            <div class="insight-title">A perfect 10 in Core Hook is the rarest score in our framework.</div>
+            <div class="insight-desc">"Every home tells a story" earned a 10/10 because it is universally relatable, emotionally resonant, culturally timeless, and endlessly adaptable. Very few campaigns in Indian history have achieved this.</div>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-icon">📈</span>
+          <div class="insight-text-block">
+            <div class="insight-title">Content Format score of 9.8 in Campaign 2 shows the power of branded series.</div>
+            <div class="insight-desc">Where the Heart Is pioneered the branded content series format in Indian advertising. The multi-season, multi-celebrity structure created compounding audience value that single campaigns cannot replicate.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCLUSION -->
+  <section class="conclusion-section">
+    <div class="section-wrap reveal">
+      <div class="section-label">Strategic Summary</div>
+      <h2 class="section-heading">What this analysis <em>teaches every brand.</em></h2>
+      <div class="conclusion-grid">
+        <div class="conclusion-text">
+          <p>Asian Paints succeeded because it mastered three disciplines simultaneously: <strong>emotional storytelling, aspirational content, and omnichannel branding consistency</strong>. The 20-factor analysis proves that no single element drove the success — it was the combined strength across all pillars.</p>
+          <p>The highest-scoring factors — Core Hook (10/10), Copywriting (9.8), Positioning (9.8), Content Formats (9.8) — reveal a clear pattern: <strong>the brand's biggest strengths are all in message and creative</strong>. This is not accidental. Asian Paints invested in strategic clarity before creative execution.</p>
+          <p>For brands looking to replicate this success, the lesson is clear: define your emotional territory first. Own a human truth. Then build every creative decision to serve that truth with obsessive consistency over years — not quarters.</p>
+        </div>
+        <div class="conclusion-summary">
+          <div class="cs-title">Standout Scores</div>
+          <ul class="cs-points">
+            <li>Core Hook / Big Idea: 10/10 — "Every home tells a story" is a perfect brief</li>
+            <li>Copywriting (C1): 9.8/10 — Simple, sticky, and culturally timeless</li>
+            <li>Positioning & USP (C1): 9.8/10 — Owned the Indian home emotionally</li>
+            <li>Content Formats (C2): 9.8/10 — Pioneered the branded content series</li>
+            <li>Influencer Strategy (C2): 9.7/10 — Celebrities as proof, not promoters</li>
+            <li>Branding Consistency (C1): 9.7/10 — Decades of disciplined brand voice</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cta">
+    <div class="cta-inner">
+      <div class="cta-tag">// Brand Business Talk — BBT</div>
+      <h2 class="cta-heading">Want your brand analysed like this?</h2>
+      <p class="cta-sub">At Brand Business Talk, we help brands with research, strategy, market insights, and growth recommendations. Let's build your brand growth strategy together.</p>
+      <div class="cta-contacts">
+        <div class="cta-contact-item">
+          <span class="cta-c-label">Call</span>
+          <span class="cta-c-value">8467886865</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-c-label">WhatsApp</span>
+          <span class="cta-c-value">9004390564</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-c-label">Email</span>
+          <span class="cta-c-value">brand.business.talks@gmail.com</span>
+        </div>
+      </div>
+      <a href="mailto:brand.business.talks@gmail.com" class="btn-cta">Start Your Brand Analysis →</a>
+    </div>
+  </section>
+
+  <footer class="bbt-footer">
+   <img src="images/logo.jpeg" alt="logo" class="nav-logo"/>
+    <span class="footer-copy-small">© 2025 Brand Business Talk. All rights reserved.</span>
+    <span class="footer-series-tag">40 Day · 40 Brand Series · Day 06 — Asian Paints 20-Factor</span>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Animate factor bars on scroll
+    const factorObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.factor-bar-fill').forEach((bar, i) => {
+            setTimeout(() => bar.classList.add('animate'), i * 60);
+          });
+          factorObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.pillar-group').forEach(g => factorObserver.observe(g));
+  </script>
+</body>
+</html>
