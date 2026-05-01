@@ -3,587 +3,244 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zomato vs Asian Paints Campaign Report | BBT 40 Brand Series</title>
-  <meta name="description" content="Complete 20-factor campaign rating comparison between Zomato and Asian Paints. Professional marketing framework analysis by Brand Business Talk."/>
+  <title>Zomato Campaign Case Study | BBT 40 Brand Series</title>
+  <meta name="description" content="Strategic analysis of Zomato Gold and ZPL campaigns. How India's food-tech leader built growth through loyalty and culture. Brand Business Talk."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
   <style>
-    :root { --accent: #0a0a0a; --gold: #c9a84c; }
-    .accent-z { color: #e23744; }
-    .accent-ap { color: #2d6a4f; }
-    .hero-brand em { color: #e23744; }
-    .vs-divider {
-      font-family: var(--font-display);
-      font-size: clamp(48px, 8vw, 120px);
-      font-weight: 900;
-      color: transparent;
-      -webkit-text-stroke: 2px var(--line);
-      line-height: 1;
-      text-align: center;
-      display: block;
-      margin: 0 20px;
-    }
-    .brand-hero-pair {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      flex-wrap: wrap;
-    }
-    .brand-name-z {
-      font-family: var(--font-display);
-      font-size: clamp(52px, 8vw, 96px);
-      font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: -3px;
-      color: #e23744;
-    }
-    .brand-name-ap {
-      font-family: var(--font-display);
-      font-size: clamp(52px, 8vw, 96px);
-      font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: -3px;
-      color: #2d6a4f;
-    }
-    .score-vs-grid {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 32px;
-      align-items: center;
-      margin: 60px 0;
-      padding: 48px;
-      background: var(--ink);
-    }
-    .score-block { text-align: center; }
-    .score-brand-label {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(245,240,232,0.5);
-      margin-bottom: 12px;
-    }
-    .score-big {
-      font-family: var(--font-display);
-      font-size: 72px;
-      font-weight: 900;
-      line-height: 1;
-    }
-    .score-z { color: #e23744; }
-    .score-ap { color: #2d6a4f; }
-    .score-sub {
-      font-size: 13px;
-      color: rgba(245,240,232,0.5);
-      margin-top: 8px;
-      font-family: var(--font-body);
-    }
-    .vs-mid {
-      font-family: var(--font-display);
-      font-size: 48px;
-      font-weight: 900;
-      color: var(--gold);
-      text-align: center;
-    }
-    .rating-framework {
-      background: var(--paper-alt);
-      padding: 40px;
-      margin: 40px 0;
-    }
-    .framework-title {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-    .framework-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
-    }
-    .pillar-box {
-      text-align: center;
-      padding: 16px 8px;
-      border: 1px solid var(--line);
-      background: var(--paper);
-    }
-    .pillar-box-name {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .pillar-box-score {
-      font-family: var(--font-display);
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--ink);
-    }
-    .breakdown-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 60px;
-    }
-    .breakdown-card {
-      background: var(--paper-alt);
-      padding: 40px;
-    }
-    .breakdown-card-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .bl-z { color: #e23744; }
-    .bl-ap { color: #2d6a4f; }
-    .breakdown-card-title {
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 24px;
-    }
-    .score-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 13px;
-    }
-    .score-row-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .score-row-val {
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 700;
-    }
-    .final-score-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      margin-top: 8px;
-      border-top: 2px solid var(--ink);
-    }
-    .final-score-label {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink);
-      font-weight: 700;
-    }
-    .final-score-val {
-      font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 900;
-    }
-    @media (max-width: 900px) {
-      .framework-grid { grid-template-columns: repeat(3, 1fr); }
-      .breakdown-grid { grid-template-columns: 1fr; }
-      .score-vs-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
-      .vs-mid { display: none; }
-    }
-    @media (max-width: 600px) {
-      .framework-grid { grid-template-columns: repeat(2, 1fr); }
-      .brand-hero-pair { flex-direction: column; align-items: flex-start; }
-      .vs-divider { display: none; }
-    }
+    :root { --accent: #CB202D; --accent-dark: #ea580c; --gold: #c9a84c; }
+    .btn-primary:hover { background: var(--accent); }
+    .series-badge, .section-label, .campaign-tag { color: var(--accent); }
+    .series-badge::before, .section-label::after { background: var(--accent); }
+    .highlight-box { background: var(--accent); }
+    .pillar-card::before { background: var(--accent); }
+    .cta-section { background: #0a1628; }
+    .hero-brand em, .section-heading em, .campaign-title em { color: var(--accent); }
+    .conclusion-text p strong { color: var(--accent); }
+    .accent { color: var(--accent) !important; }
+    .btn-cta { color: #0a1628; }
+    .btn-cta:hover { color: var(--paper); }
+    .nav-cta-link:hover, .btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
+    .footer-logo-small span { color: var(--gold); }
   </style>
 </head>
 <body>
-
   <nav class="bbt-nav">
     <img src="images/logo.jpeg" alt="logo" class="nav-logo"/>
     <span class="nav-series">40 Day · 40 Brand Series · Day 01</span>
     <a href="#cta" class="nav-cta-link">Get Brand Analysis ↗</a>
   </nav>
 
-  <!-- HERO -->
   <section class="case-hero">
     <div class="hero-content">
-      <div class="series-badge" style="color: #e23744;">Day 05 of 40 — Comparative Case Study</div>
-      <div class="brand-hero-pair">
-        <span class="brand-name-z">Zomato</span>
-        <span class="vs-divider">vs</span>
-        <span class="brand-name-ap">Asian<br>Paints</span>
-      </div>
-      <p class="hero-subtitle" style="margin-top:20px;">
-        A complete 20-factor professional campaign rating analysis comparing two of India's strongest brand campaigns — from awareness strategy to funnel systems, scored and explained.
-      </p>
+      <div class="series-badge">Day 01 of 40 — Brand Case Study</div>
+      <h1 class="hero-brand"><em>Zomato</em><br>Campaign</h1>
+      <p class="hero-subtitle">How India's food-tech leader built explosive growth combining loyalty engines with cultural moment marketing mastery.</p>
       <div class="hero-meta-row">
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Report Type</span>
-          <span class="hero-meta-value">Comparative</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Zomato Score</span>
-          <span class="hero-meta-value" style="color:#e23744;">7.7/10</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Asian Paints</span>
-          <span class="hero-meta-value" style="color:#2d6a4f;">8.8/10</span>
-        </div>
+        <div class="hero-meta-item"><span class="hero-meta-label">Industry</span><span class="hero-meta-value">Food-Tech</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-label">Best Rating</span><span class="hero-meta-value"><span class="accent">9.4</span>/10</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-label">Campaigns</span><span class="hero-meta-value">02</span></div>
       </div>
       <div class="hero-actions">
-        <a href="#scores" class="btn-primary">See Full Scores ↓</a>
+        <a href="#campaigns" class="btn-primary">Read Analysis ↓</a>
         <a href="#cta" class="btn-ghost">Work With BBT →</a>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-big-text">RATE</div>
+      <div class="hero-big-text">ZOMATO</div>
       <div class="rating-card">
-        <div class="rating-card-label">20-Factor Framework</div>
-        <div class="rating-number" style="font-size:48px;line-height:1.1;">200<span style="font-size:24px;"> pts</span></div>
-        <div class="rating-desc">Total factors × 10 pts each ÷ 20 = Final Rating</div>
+        <div class="rating-card-label">Campaign Rating</div>
+        <div class="rating-number">9<span>.4</span></div>
+        <div class="rating-desc">Zomato Premier League — Cultural Marketing</div>
         <div class="rating-bars">
-          <div class="r-bar-item">
-            <span class="r-bar-label">Strategy Foundation</span>
-            <div class="r-bar-track"><div class="r-bar-fill" style="width:50%"></div></div>
-          </div>
-          <div class="r-bar-item">
-            <span class="r-bar-label">Creative Execution</span>
-            <div class="r-bar-track"><div class="r-bar-fill" style="width:40%"></div></div>
-          </div>
-          <div class="r-bar-item">
-            <span class="r-bar-label">Funnel System</span>
-            <div class="r-bar-track"><div class="r-bar-fill" style="width:30%"></div></div>
-          </div>
-          <div class="r-bar-item">
-            <span class="r-bar-label">Data & Scaling</span>
-            <div class="r-bar-track"><div class="r-bar-fill" style="width:20%"></div></div>
-          </div>
+          <div class="r-bar-item"><span class="r-bar-label">Cultural Relevance</span><div class="r-bar-track"><div class="r-bar-fill" style="width:96%"></div></div></div>
+          <div class="r-bar-item"><span class="r-bar-label">Funnel Design</span><div class="r-bar-track"><div class="r-bar-fill" style="width:95%"></div></div></div>
+          <div class="r-bar-item"><span class="r-bar-label">Engagement Loops</span><div class="r-bar-track"><div class="r-bar-fill" style="width:94%"></div></div></div>
+          <div class="r-bar-item"><span class="r-bar-label">Viral Scale</span><div class="r-bar-track"><div class="r-bar-fill" style="width:93%"></div></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TICKER -->
   <div class="ticker-strip">
     <div class="ticker-inner-cs">
-      <span class="t-item">Zomato EV Campaign</span><span class="t-dot">✦</span>
-      <span class="t-item">Asian Paints Kaam Hamara Credit Aapka</span><span class="t-dot">✦</span>
-      <span class="t-item">20-Factor Rating System</span><span class="t-dot">✦</span>
-      <span class="t-item">Campaign Scoring Framework</span><span class="t-dot">✦</span>
-      <span class="t-item">Brand Awareness vs Conversion</span><span class="t-dot">✦</span>
-      <span class="t-item">Performance Marketing</span><span class="t-dot">✦</span>
-      <span class="t-item">Professional Campaign Analysis</span><span class="t-dot">✦</span>
-      <span class="t-item">Zomato EV Campaign</span><span class="t-dot">✦</span>
-      <span class="t-item">Asian Paints Kaam Hamara Credit Aapka</span><span class="t-dot">✦</span>
-      <span class="t-item">20-Factor Rating System</span><span class="t-dot">✦</span>
-      <span class="t-item">Campaign Scoring Framework</span><span class="t-dot">✦</span>
-      <span class="t-item">Brand Awareness vs Conversion</span><span class="t-dot">✦</span>
-      <span class="t-item">Performance Marketing</span><span class="t-dot">✦</span>
-      <span class="t-item">Professional Campaign Analysis</span><span class="t-dot">✦</span>
+      <span class="t-item">Zomato Gold</span><span class="t-dot">✦</span>
+      <span class="t-item">Zomato Premier League</span><span class="t-dot">✦</span>
+      <span class="t-item">Food-Tech Growth</span><span class="t-dot">✦</span>
+      <span class="t-item">Loyalty Engine</span><span class="t-dot">✦</span>
+      <span class="t-item">Cultural Marketing</span><span class="t-dot">✦</span>
+      <span class="t-item">IPL Integration</span><span class="t-dot">✦</span>
+      <span class="t-item">Moment Marketing</span><span class="t-dot">✦</span>
+      <span class="t-item">India Food Delivery</span><span class="t-dot">✦</span>
+      <span class="t-item">Zomato Gold</span><span class="t-dot">✦</span>
+      <span class="t-item">Zomato Premier League</span><span class="t-dot">✦</span>
+      <span class="t-item">Food-Tech Growth</span><span class="t-dot">✦</span>
+      <span class="t-item">Loyalty Engine</span><span class="t-dot">✦</span>
+      <span class="t-item">Cultural Marketing</span><span class="t-dot">✦</span>
+      <span class="t-item">IPL Integration</span><span class="t-dot">✦</span>
+      <span class="t-item">Moment Marketing</span><span class="t-dot">✦</span>
+      <span class="t-item">India Food Delivery</span><span class="t-dot">✦</span>
     </div>
   </div>
 
-  <!-- FRAMEWORK SECTION -->
   <section class="intro-section">
     <div class="section-wrap reveal">
-      <div class="section-label">The Rating System</div>
-      <h2 class="section-heading">How BBT scores campaigns — <em>objectively.</em></h2>
-      <p style="font-size:17px;color:var(--ink);max-width:760px;line-height:1.8;margin-bottom:40px;">The rating is calculated across 20 professional campaign factors, grouped into six major strategic pillars. Each factor is rated out of 10 points. The final rating = Total Score ÷ 20. This ensures scores are based on measurable strategic performance, not opinion alone.</p>
-      <div class="rating-framework">
-        <div class="framework-title">6 Strategic Pillars — 20 Factors — 200 Maximum Points</div>
-        <div class="framework-grid">
-          <div class="pillar-box">
-            <div class="pillar-box-name">Strategy Foundation</div>
-            <div class="pillar-box-score">50 pts</div>
+      <div class="intro-grid">
+        <div class="intro-aside">
+          <div class="section-label">Brand Overview</div>
+          <h2 class="section-heading">Not just delivery — <em>growth systems.</em></h2>
+          <div class="intro-image-block" style="margin-top:32px;">
+            <img src="images/120.png" alt="Zomato food delivery growth" loading="lazy"/>
+            <div class="intro-image-caption">// Zomato — India's Food-Tech Master</div>
           </div>
-          <div class="pillar-box">
-            <div class="pillar-box-name">Offer & Messaging</div>
-            <div class="pillar-box-score">30 pts</div>
-          </div>
-          <div class="pillar-box">
-            <div class="pillar-box-name">Creative Execution</div>
-            <div class="pillar-box-score">40 pts</div>
-          </div>
-          <div class="pillar-box">
-            <div class="pillar-box-name">Distribution</div>
-            <div class="pillar-box-score">30 pts</div>
-          </div>
-          <div class="pillar-box">
-            <div class="pillar-box-name">Funnel System</div>
-            <div class="pillar-box-score">30 pts</div>
-          </div>
-          <div class="pillar-box">
-            <div class="pillar-box-name">Data & Scaling</div>
-            <div class="pillar-box-score">20 pts</div>
-          </div>
+        </div>
+        <div class="intro-body">
+          <p>Zomato built complete growth systems combining product strategy, cultural timing, user psychology, and performance marketing — far beyond generic discount campaigns.</p>
+          <p>The brand mastered dual engines: <strong>loyalty retention (Zomato Gold)</strong> + <strong>moment acquisition (ZPL)</strong> creating sustainable scale.</p>
+          <p>Day 1 analysis reveals how Zomato transformed food delivery into a culturally relevant lifestyle platform through intelligent campaign architecture.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SCORE COMPARISON -->
-  <section class="campaigns-section" id="scores">
+  <section class="campaigns-section" id="campaigns">
     <div class="section-wrap">
-      <div class="section-label reveal">Score Comparison</div>
-      <h2 class="section-heading reveal">The numbers <em>don't lie.</em></h2>
+      <div class="section-label reveal">Campaign Analysis</div>
+      <h2 class="section-heading reveal">Loyalty meets culture. <em>Retention meets acquisition.</em></h2>
 
-      <!-- VS card -->
-      <div class="score-vs-grid reveal">
-        <div class="score-block">
-          <div class="score-brand-label">Zomato EV Campaign</div>
-          <div class="score-big score-z">7.7</div>
-          <div class="score-sub">153/200 pts — Brand Awareness Champion</div>
+      <div class="campaign-block reveal">
+        <div class="campaign-header">
+          <div class="campaign-num">01</div>
+          <div class="campaign-title-block">
+            <div class="campaign-tag">Loyalty Engine — Retention</div>
+            <h3 class="campaign-title">Zomato <em>Gold</em> — Habit Formation Masterclass</h3>
+          </div>
         </div>
-        <div class="vs-mid">VS</div>
-        <div class="score-block">
-          <div class="score-brand-label">Asian Paints — Kaam Hamara</div>
-          <div class="score-big score-ap">8.8</div>
-          <div class="score-sub">176/200 pts — Performance Conversion Leader</div>
+        <div class="campaign-grid">
+          <div class="campaign-text">
+            <p>Instead of random discounts, Zomato Gold created membership ecosystem with restaurant privileges, free delivery, and premium access — shifting users from occasional to habitual ordering.</p>
+            <p>Clear value prop: small upfront fee = ongoing smart savings. Psychological exclusivity + immediate reward loops drove subscription and retention.</p>
+            <div class="highlight-box">
+              <p>"Loyalty programs work when they create habits, not discounts. Zomato Gold made premium dining accessible and habitual."</p>
+            </div>
+            <p>App placements, push notifications, emails, and partner integrations created frictionless acquisition. Instant savings post-subscription locked in repeat behavior.</p>
+          </div>
+          <div class="campaign-image-side">
+            <img class="campaign-img" src="images/121.jpg" alt="Zomato Gold loyalty program" loading="lazy"/>
+            <div class="campaign-rating-badge">
+              <div class="crb-score">8.8</div>
+              <div class="crb-info">
+                <span class="crb-label">Success Rating</span>
+                <span class="crb-text">Transformed occasional users into habitual premium subscribers</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Breakdown cards -->
-      <div class="breakdown-grid reveal">
-        <!-- Zomato -->
-        <div class="breakdown-card">
-          <div class="breakdown-card-label bl-z">Zomato Campaign</div>
-          <h3 class="breakdown-card-title">Sustainability-Led Brand Campaign</h3>
-          <div class="score-row">
-            <span class="score-row-label">Strategy Foundation</span>
-            <span class="score-row-val" style="color:#e23744;">43/50</span>
-          </div>
-          <div class="score-row">
-            <span class="score-row-label">Offer & Messaging</span>
-            <span class="score-row-val" style="color:#e23744;">23/30</span>
-          </div>
-          <div class="score-row">
-            <span class="score-row-label">Creative Execution</span>
-            <span class="score-row-val" style="color:#e23744;">33/40</span>
-          </div>
-          <div class="score-row">
-            <span class="score-row-label">Distribution</span>
-            <span class="score-row-val" style="color:#e23744;">22/30</span>
-          </div>
-          <div class="score-row">
-            <span class="score-row-label">Funnel System</span>
-            <span class="score-row-val" style="color:#e23744;">19/30</span>
-          </div>
-          <div class="score-row">
-            <span class="score-row-label">Data & Scaling</span>
-            <span class="score-row-val" style="color:#e23744;">13/20</span>
-          </div>
-          <div class="final-score-row">
-            <span class="final-score-label">Final Rating</span>
-            <span class="final-score-val" style="color:#e23744;">7.7/10</span>
+      <div class="campaign-block reveal">
+        <div class="campaign-header">
+          <div class="campaign-num">02</div>
+          <div class="campaign-title-block">
+            <div class="campaign-tag">Cultural Acquisition — Performance</div>
+            <h3 class="campaign-title">Zomato Premier <em>League (ZPL)</em> — IPL Moment Mastery</h3>
           </div>
         </div>
-        <!-- Asian Paints -->
-        <div class="breakdown-card">
-          <div class="breakdown-card-label bl-ap">Asian Paints Campaign</div>
-          <h3 class="breakdown-card-title">Kaam Hamara. Credit Aapka.</h3>
-          <div class="score-row">
-            <span class="score-row-label">Strategy Foundation</span>
-            <span class="score-row-val" style="color:#2d6a4f;">46/50</span>
+        <div class="campaign-grid">
+          <div class="campaign-text">
+            <p>Perfect behavioral insight: cricket + food consumption. ZPL gamified IPL with match predictions, live engagement, cashback rewards — becoming part of India's biggest cultural ritual.</p>
+            <p>Not interruption marketing — native integration. Pre-match attention → live engagement → post-match ordering created complete conversion funnel.</p>
+            <div class="highlight-box">
+              <p>"Great campaigns don't create attention — they own existing attention. ZPL made Zomato essential during India's cricket obsession."</p>
+            </div>
+            <p>Digital video, CTV, sports partnerships, regional personalization scaled nationally. Viral shareability + order-linked rewards drove massive acquisition and frequency.</p>
           </div>
-          <div class="score-row">
-            <span class="score-row-label">Offer & Messaging</span>
-            <span class="score-row-val" style="color:#2d6a4f;">28/30</span>
-          </div>
-          <div class="score-row">
-            <span class="score-row-label">Creative Execution</span>
-            <span class="score-row-val" style="color:#2d6a4f;">36/40</span>
-          </div>
-          <div class="score-row">
-            <span class="score-row-label">Distribution</span>
-            <span class="score-row-val" style="color:#2d6a4f;">23/30</span>
-          </div>
-          <div class="score-row">
-            <span class="score-row-label">Funnel System</span>
-            <span class="score-row-val" style="color:#2d6a4f;">26/30</span>
-          </div>
-          <div class="score-row">
-            <span class="score-row-label">Data & Scaling</span>
-            <span class="score-row-val" style="color:#2d6a4f;">17/20</span>
-          </div>
-          <div class="final-score-row">
-            <span class="final-score-label">Final Rating</span>
-            <span class="final-score-val" style="color:#2d6a4f;">8.8/10</span>
+          <div class="campaign-image-side">
+            <img class="campaign-img" src="images/122.jpg" alt="Zomato Premier League IPL campaign" loading="lazy"/>
+            <div class="campaign-rating-badge">
+              <div class="crb-score">9.4</div>
+              <div class="crb-info">
+                <span class="crb-label">Success Rating</span>
+                <span class="crb-text">Captured IPL cultural moment driving acquisition + order frequency explosion</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COMPARE TABLE -->
-  <section class="compare-section">
+  <section class="strategy-section">
     <div class="section-wrap reveal">
-      <div class="section-label">Side-by-Side Analysis</div>
-      <h2 class="section-heading">What each campaign <em>wins and loses.</em></h2>
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Factor</th>
-            <th>Zomato EV Campaign</th>
-            <th>Asian Paints — Kaam Hamara</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Primary Objective</td>
-            <td>Brand trust & public perception enhancement</td>
-            <td>Generate service inquiries + premium positioning</td>
-          </tr>
-          <tr>
-            <td>Core Strategy</td>
-            <td>Sustainability-led awareness; future-ready brand story</td>
-            <td>Pain-point marketing with clear service offer</td>
-          </tr>
-          <tr>
-            <td>Target Audience</td>
-            <td>Urban youth, eco-conscious digital consumers</td>
-            <td>Homeowners, renovators, premium urban families</td>
-          </tr>
-          <tr>
-            <td>Messaging Hook</td>
-            <td>Responsibility & future transformation</td>
-            <td>We do the work, you take the credit</td>
-          </tr>
-          <tr>
-            <td>Conversion Funnel</td>
-            <td>Weak — no direct lead CTA or measurable action</td>
-            <td>Strong — Ad → Service Page → Consultation → Booking</td>
-          </tr>
-          <tr>
-            <td>Funnel Score</td>
-            <td><span class="score-chip">19/30</span></td>
-            <td><span class="score-chip" style="background:#2d6a4f;color:#fff;">26/30</span></td>
-          </tr>
-          <tr>
-            <td>Strategy Score</td>
-            <td><span class="score-chip" style="background:#e23744;color:#fff;">43/50</span></td>
-            <td><span class="score-chip" style="background:#2d6a4f;color:#fff;">46/50</span></td>
-          </tr>
-          <tr>
-            <td>Brand Equity Build</td>
-            <td>Very high — long-term trust & modern consumer relevance</td>
-            <td>High — premium service brand authority</td>
-          </tr>
-          <tr>
-            <td>ROI Visibility</td>
-            <td>Low — awareness-only, no direct performance metrics</td>
-            <td>High — structured booking funnel with measurable outcomes</td>
-          </tr>
-          <tr>
-            <td>Best For</td>
-            <td>Brands building long-term trust & category positioning</td>
-            <td>Brands needing qualified leads, bookings, and conversions</td>
-          </tr>
-          <tr>
-            <td><strong>FINAL RATING</strong></td>
-            <td><strong>7.7/10</strong></td>
-            <td><strong>8.8/10</strong></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="section-label">Growth Framework</div>
+      <h2 class="section-heading">Zomato's blueprint for <em>food-tech dominance.</em></h2>
+      <div class="pillars-grid">
+        <div class="pillar-card reveal"><div class="pillar-num">01 — Dual</div><h3 class="pillar-title">Retention + Acquisition</h3><p class="pillar-desc">Gold builds lifetime value. ZPL drives new users. Dual engines create sustainable growth architecture.</p></div>
+        <div class="pillar-card reveal"><div class="pillar-num">02 — Habit</div><h3 class="pillar-title">Reward Loops</h3><p class="pillar-desc">Immediate savings post-Gold subscription + ZPL cashback created behavioral reinforcement driving repeat usage.</p></div>
+        <div class="pillar-card reveal"><div class="pillar-num">03 — Culture</div><h3 class="pillar-title">Moment Ownership</h3><p class="pillar-desc">IPL wasn't competition — it was opportunity. Brands scale by owning cultural rituals, not interrupting them.</p></div>
+        <div class="pillar-card reveal"><div class="pillar-num">04 — Clarity</div><h3 class="pillar-title">Simple Value Props</h3><p class="pillar-desc">Gold: pay once, save always. ZPL: predict, win, eat. Instant understanding = instant conversion.</p></div>
+        <div class="pillar-card reveal"><div class="pillar-num">05 — Native</div><h3 class="pillar-title">Behavioral Alignment</h3><p class="pillar-desc">Amplified existing behaviors (cricket+food, dining value) rather than creating new ones = natural scale.</p></div>
+        <div class="pillar-card reveal"><div class="pillar-num">06 — Funnel</div><h3 class="pillar-title">Full Conversion Architecture</h3><p class="pillar-desc">App discovery → engagement → frictionless conversion → repeat loops = complete growth system.</p></div>
+      </div>
     </div>
   </section>
 
-  <!-- INSIGHTS BAND -->
   <div class="insights-band reveal">
     <div class="insights-inner">
-      <div>
-        <div class="insights-label">Expert Analysis</div>
-        <h2 class="insights-heading">The BBT <em>Verdict</em></h2>
-      </div>
+      <div><div class="insights-label">Expert Analysis</div><h2 class="insights-heading">The BBT <em>Verdict</em></h2></div>
       <div class="insights-list">
-        <div class="insight-item">
-          <span class="insight-icon">🎯</span>
-          <div class="insight-text-block">
-            <div class="insight-title">Campaign objective determines campaign rating.</div>
-            <div class="insight-desc">Zomato's campaign is outstanding — for awareness. Asian Paints' campaign is outstanding — for conversion. Rating improves when every element supports the defined business objective.</div>
-          </div>
-        </div>
-        <div class="insight-item">
-          <span class="insight-icon">🔴</span>
-          <div class="insight-text-block">
-            <div class="insight-title">Awareness without a funnel is incomplete marketing.</div>
-            <div class="insight-desc">Zomato's sustainability campaign built brand equity but left measurable ROI on the table. Without a conversion path, even brilliant campaigns score lower on business impact.</div>
-          </div>
-        </div>
-        <div class="insight-item">
-          <span class="insight-icon">🟢</span>
-          <div class="insight-text-block">
-            <div class="insight-title">Asian Paints won because it combined branding and commerce.</div>
-            <div class="insight-desc">The "Kaam Hamara" campaign had strong brand communication AND a clear service offer AND a measurable funnel. That triple combination is what elevates a campaign from good to great.</div>
-          </div>
-        </div>
+        <div class="insight-item"><span class="insight-icon">👑</span><div class="insight-text-block"><div class="insight-title">Dual engines beat single campaigns.</div><div class="insight-desc">Gold = retention machine. ZPL = acquisition rocket. Together they create unstoppable growth momentum.</div></div></div>
+        <div class="insight-item"><span class="insight-icon">⚾</span><div class="insight-text-block"><div class="insight-title">Own cultural moments, don't interrupt them.</div><div class="insight-desc">ZPL didn't advertise during IPL — it became essential to the cricket+food ritual consumers already loved.</div></div></div>
+        <div class="insight-item"><span class="insight-icon">🔄</span><div class="insight-text-block"><div class="insight-title">Immediate rewards create habit loops.</div><div class="insight-desc">Gold's instant savings + ZPL's match-day cashback locked users into repeat ordering behavior.</div></div></div>
       </div>
     </div>
   </div>
 
-  <!-- CONCLUSION -->
   <section class="conclusion-section">
     <div class="section-wrap reveal">
       <div class="section-label">Strategic Summary</div>
-      <h2 class="section-heading">What brands should <em>learn from this.</em></h2>
+      <h2 class="section-heading">Final <em>Learnings</em></h2>
       <div class="conclusion-grid">
         <div class="conclusion-text">
-          <p>The most important lesson from both campaigns is that successful campaigns are not built only on ads. They are built on <strong>clarity of objective</strong>. If the objective is awareness and trust, Zomato's model is highly effective. If the objective is leads, service sales, and measurable conversions, Asian Paints offers a stronger blueprint.</p>
-          <p>For founders and brands, the key question is always: <strong>What is the business objective behind this campaign?</strong> Ratings improve when every element — message, channel, creative, funnel — supports that single objective.</p>
-          <p>Neither campaign is wrong. They serve different purposes. The best marketers know which type of campaign they need and when — and build accordingly.</p>
+          <p>Zomato proves sustainable growth requires dual engines. <strong>Zomato Gold</strong> mastered retention through habit-forming loyalty. <strong>ZPL</strong> captured acquisition through cultural moment mastery.</p>
+          <p>The formula scales: understand behavior → own moments → design simple offers → build repeat loops → execute full-funnel systems. Day 1 sets the growth systems standard for the series.</p>
+          <p>Brands win by amplifying existing behaviors with intelligent product integration — Zomato redefined food-tech through cultural and psychological mastery.</p>
         </div>
         <div class="conclusion-summary">
           <div class="cs-title">Key Takeaways</div>
           <ul class="cs-points">
-            <li>Always define the campaign objective before creating any creative</li>
-            <li>Awareness campaigns need different metrics than conversion campaigns</li>
-            <li>A strong funnel system separates a 7.7 campaign from an 8.8 campaign</li>
-            <li>Sustainability messaging works for trust but needs a conversion layer</li>
-            <li>Pain-point marketing combined with a clear offer drives the highest ROI</li>
-            <li>Great branding + clear funnel = category leadership</li>
+            <li>Build dual growth engines (retention + acquisition)</li>
+            <li>Own cultural moments rather than interrupt them</li>
+            <li>Design immediate reward loops for habit formation</li>
+            <li>Keep value propositions crystal clear</li>
+            <li>Amplify existing consumer behaviors</li>
+            <li>Execute complete funnel architectures</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section" id="cta" style="background:#0a0a0a;">
+  <section class="cta-section" id="cta">
     <div class="cta-inner">
       <div class="cta-tag">// Brand Business Talk — BBT</div>
       <h2 class="cta-heading">Want your brand analysed like this?</h2>
-      <p class="cta-sub">At Brand Business Talk, we help brands with research, strategy, market insights, and growth recommendations. Let's build your brand growth strategy together.</p>
+      <p class="cta-sub">At Brand Business Talk, we help brands with research, strategy, market insights, campaign analysis, and growth recommendations. Let's build your brand growth strategy together.</p>
       <div class="cta-contacts">
-        <div class="cta-contact-item">
-          <span class="cta-c-label">Call</span>
-          <span class="cta-c-value">8467886865</span>
-        </div>
-        <div class="cta-contact-item">
-          <span class="cta-c-label">WhatsApp</span>
-          <span class="cta-c-value">9004390564</span>
-        </div>
-        <div class="cta-contact-item">
-          <span class="cta-c-label">Email</span>
-          <span class="cta-c-value">brand.business.talks@gmail.com</span>
-        </div>
+        <div class="cta-contact-item"><span class="cta-c-label">Call</span><span class="cta-c-value">8467886865</span></div>
+        <div class="cta-contact-item"><span class="cta-c-label">WhatsApp</span><span class="cta-c-value">9004390564</span></div>
+        <div class="cta-contact-item"><span class="cta-c-label">Email</span><span class="cta-c-value">brand.business.talks@gmail.com</span></div>
       </div>
-      <a href="mailto:brand.business.talks@gmail.com" class="btn-cta" style="color:#0a0a0a;">Start Your Brand Analysis →</a>
+      <a href="mailto:brand.business.talks@gmail.com" class="btn-cta">Start Your Brand Analysis →</a>
     </div>
   </section>
 
   <footer class="bbt-footer">
     <img src="images/logo.jpeg" alt="logo" class="nav-logo"/>
     <span class="footer-copy-small">© 2025 Brand Business Talk. All rights reserved.</span>
-    <span class="footer-series-tag">40 Day · 40 Brand Series · Day 01 — Zomato vs Asian Paints</span>
+    <span class="footer-series-tag">40 Day · 40 Brand Series · Day 01 — Zomato</span>
   </footer>
-
   <script src="main.js"></script>
 </body>
 </html>
