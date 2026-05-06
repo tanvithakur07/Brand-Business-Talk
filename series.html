@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>40 Day · 40 Brand Series | Brand Business Talk</title>
+  <meta name="description" content="BBT's flagship campaign — 40 days, 40 Indian brand case studies. Deep-dive analysis of India's most iconic brands."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+
+    /* ── SERIES HERO ── */
+    .series-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .series-hero-left {
+      padding: 160px 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .series-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s 0.3s forwards;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .series-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .series-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5.4rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.9s 0.5s forwards;
+    }
+    .series-hero-title em { color: var(--gold); font-style: italic; }
+    .series-hero-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4rem, 9vw, 10rem);
+      font-weight: 900;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--gold);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.9s 0.6s forwards;
+    }
+    .series-hero-sub {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 460px;
+      margin-bottom: 48px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+    .series-hero-actions {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+    .series-progress-strip {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      animation: fadeUp 0.8s 1.2s forwards;
+    }
+    .progress-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .progress-bar-outer {
+      height: 3px;
+      background: var(--border);
+      width: 100%;
+      margin-bottom: 12px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      width: 2.5%;
+      transition: width 1.2s ease;
+    }
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+    .progress-meta span:first-child { color: var(--gold); }
+
+    /* ── HERO RIGHT ── */
+    .series-hero-right {
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 1.2s 0.4s forwards;
+    }
+    .hero-bg-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(160px, 22vw, 280px);
+      font-weight: 900;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(201,168,76,0.07);
+      line-height: 1;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .hero-right-grid {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2px;
+      background: rgba(201,168,76,0.05);
+      padding: 80px 40px 40px;
+    }
+    .hero-stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .hero-stat-box::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+      transform-origin: left;
+    }
+    .hero-stat-box:hover::before { transform: scaleX(1); }
+    .hero-stat-box:hover { border-color: rgba(201,168,76,0.45); }
+    .hsb-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 900;
+      color: var(--gold); line-height: 1; margin-bottom: 6px;
+    }
+    .hsb-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .hsb-desc { font-size: 0.75rem; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+
+    /* ── BRANDS MARQUEE ── */
+    .brands-marquee {
+      padding: 36px 0;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .bm-inner {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 40s linear infinite;
+    }
+    .bm-item {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 900; font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(201,168,76,0.2);
+      padding: 0 40px; white-space: nowrap;
+    }
+    .bm-item.fill { -webkit-text-stroke: none; color: rgba(201,168,76,0.1); }
+
+    /* ── SERIES TICKER ── */
+    .series-ticker {
+      padding: 14px 0;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .series-ticker-inner {
+      display: flex; white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+    .s-tick-item {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 0 28px;
+    }
+    .s-tick-dot { color: var(--gold); padding: 0 4px; }
+
+    /* ── WHAT SECTION ── */
+    .what-section {
+      padding: 100px 60px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+      border-bottom: 1px solid var(--border);
+    }
+    .what-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .campaign-counter {
+      margin-top: 40px; padding: 28px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .cc-header {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .cc-count {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.6rem; font-weight: 900;
+      color: var(--gold); line-height: 1;
+    }
+    .cc-of { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+    .what-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.2vw, 3.2rem);
+      font-weight: 900; line-height: 1.1; margin-bottom: 28px;
+    }
+    .what-heading em { color: var(--gold); font-style: italic; }
+    .what-text { font-size: 1rem; line-height: 1.85; color: var(--muted); max-width: 640px; margin-bottom: 20px; }
+    .what-pillars { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+    .what-pillar {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 8px 16px;
+      border: 1px solid var(--border); color: var(--muted);
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .what-pillar:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── VALUE SECTION ── */
+    .value-section {
+      padding: 100px 60px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .value-header { text-align: center; margin-bottom: 72px; }
+    .value-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    }
+    .value-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 900;
+    }
+    .value-heading em { color: var(--gold); font-style: italic; }
+    .value-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; background: var(--border);
+    }
+    .value-card {
+      background: var(--bg); padding: 44px 36px;
+      position: relative; overflow: hidden;
+    }
+    .value-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: var(--gold); transform: scaleX(0);
+      transition: transform 0.4s ease; transform-origin: left;
+    }
+    .value-card:hover::before { transform: scaleX(1); }
+    .vc-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem; font-weight: 900; font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(201,168,76,0.2);
+      line-height: 1; margin-bottom: 16px;
+    }
+    .vc-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 14px; }
+    .vc-desc { font-size: 0.85rem; line-height: 1.75; color: var(--muted); }
+
+    /* ── FEATURED ── */
+    .featured-section { padding: 100px 60px; border-bottom: 1px solid var(--border); }
+    .sg-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; margin-bottom: 48px;
+    }
+    .sg-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 3rem); font-weight: 900; line-height: 1.1;
+    }
+    .sg-title em { color: var(--gold); font-style: italic; }
+    .sg-meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.1em;
+      color: var(--muted); text-align: right;
+    }
+    .featured-inner { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--border); }
+    .featured-left {
+      padding: 52px; display: flex;
+      flex-direction: column; justify-content: space-between;
+      border-right: 1px solid var(--border);
+    }
+    .fl-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 32px; display: flex; align-items: center; gap: 10px;
+    }
+    .fl-tag::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .fl-day { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-style: italic; color: var(--muted); margin-bottom: 8px; }
+    .fl-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 4vw, 4.5rem); font-weight: 900; line-height: 1; margin-bottom: 6px;
+    }
+    .fl-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-top: 20px; max-width: 380px; }
+    .fl-actions { margin-top: 44px; display: flex; gap: 14px; }
+    .featured-right { padding: 52px; background: var(--surface2); }
+    .fr-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 28px;
+    }
+    .fr-insights { display: flex; flex-direction: column; gap: 22px; }
+    .fri-item {
+      display: flex; gap: 18px; align-items: flex-start;
+      padding-bottom: 22px; border-bottom: 1px solid var(--border);
+    }
+    .fri-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .fri-icon {
+      width: 38px; height: 38px; border: 1px solid var(--border);
+      background: var(--surface); display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .fri-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+    .fri-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── ALL 40 BRANDS ── */
+    .series-grid-section { padding: 100px 60px; border-bottom: 1px solid var(--border); }
+
+    /* Filter */
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+    .filter-btn {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 8px 18px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--muted); cursor: none;
+      transition: border-color 0.3s, color 0.3s, background 0.3s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--gold); color: var(--gold); background: var(--gold-dim);
+    }
+
+    /* Brand Cards */
+    .brands-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 2px; background: rgba(201,168,76,0.06);
+    }
+    .brand-card {
+      background: var(--surface); padding: 28px 22px;
+      position: relative; cursor: none;
+      transition: background 0.3s;
+      text-decoration: none; color: inherit;
+      display: block; overflow: hidden;
+    }
+    .brand-card::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: var(--gold); transform: scaleX(0);
+      transition: transform 0.35s ease; transform-origin: left;
+    }
+    .brand-card:hover { background: var(--surface2); }
+    .brand-card:hover::after { transform: scaleX(1); }
+    .brand-card.finale {
+      background: var(--surface2);
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+    .bc-day {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+    }
+    .bc-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700;
+      line-height: 1.2; margin-bottom: 8px; color: var(--text);
+    }
+    .brand-card.finale .bc-day,
+    .brand-card.finale .bc-name { color: var(--gold); }
+    .bc-industry { font-size: 0.72rem; color: var(--muted); margin-bottom: 18px; line-height: 1.4; }
+    .bc-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .bc-status.live { color: var(--gold); }
+    .bc-status.live::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--gold); border-radius: 50%;
+      animation: pulse-dot 1.5s ease-in-out infinite;
+    }
+    .bc-status.upcoming { color: var(--muted); }
+    .bc-status.upcoming::before {
+      content: ''; width: 6px; height: 6px;
+      border: 1px solid var(--muted); border-radius: 50%;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    /* ── CTA ── */
+    .series-cta {
+      padding: 100px 60px; background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .series-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 65%);
+    }
+    .scta-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px; position: relative;
+    }
+    .scta-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 4.2rem); font-weight: 900;
+      line-height: 1.08; margin-bottom: 20px; position: relative;
+    }
+    .scta-heading em { color: var(--gold); font-style: italic; }
+    .scta-sub {
+      font-size: 1rem; color: var(--muted);
+      max-width: 520px; margin: 0 auto 48px;
+      line-height: 1.75; position: relative;
+    }
+    .scta-contacts {
+      display: flex; justify-content: center;
+      gap: 48px; margin-bottom: 40px; position: relative;
+    }
+    .scta-contact { text-align: center; }
+    .scta-c-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      display: block; margin-bottom: 4px;
+    }
+    .scta-c-value { font-size: 0.92rem; color: var(--text); }
+    .scta-actions { display: flex; justify-content: center; gap: 16px; position: relative; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .series-hero { grid-template-columns: 1fr; }
+      .series-hero-left { padding: 120px 24px 60px; }
+      .series-hero-right { display: none; }
+      .what-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+      .series-grid-section { padding: 60px 24px; }
+      .brands-grid { grid-template-columns: repeat(2, 1fr); }
+      .value-section { padding: 60px 24px; }
+      .value-cards { grid-template-columns: 1fr; }
+      .featured-section { padding: 60px 24px; }
+      .featured-inner { grid-template-columns: 1fr; }
+      .featured-left { padding: 36px 28px; border-right: none; border-bottom: 1px solid var(--border); }
+      .featured-right { padding: 36px 28px; }
+      .series-cta { padding: 60px 24px; }
+      .scta-contacts { flex-direction: column; gap: 24px; }
+      .sg-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .filter-bar { gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <!-- NOTE: series.html lives inside BBT Campaigns/ folder
+       so links to root are ../index.html, ../main.js, ../images/logo.jpeg -->
+  <nav id="navbar">
+    <a href="../index.html"><img src="images/logo.jpeg" alt="BBT Logo" class="nav-logo"/></a>
+    <ul class="nav-links">
+      <li><a href="index.html#coverage">Topics</a></li>
+      <li><a href="index.html#featured">Stories</a></li>
+      <li><a href="series.html">40 Brand Series</a></li>
+<li><a href="index.html#mission">About</a></li>
+<li><a href="index.html#newsletter">Newsletter</a></li>
+    </ul>
+    <a href="#series-cta" class="nav-cta">Get Analysis</a>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="series-hero">
+    <div class="series-hero-left">
+      <p class="series-eyebrow">Brand Business Talk — Flagship Series</p>
+      <h1 class="series-hero-title">40 Day</h1>
+      <div class="series-hero-num">40 Brand</div>
+      <p class="series-hero-sub">
+        India's deepest brand intelligence series — one in-depth case study every day, for 40 days straight. Decoding the strategy, campaigns, and genius behind India's most iconic brands.
+      </p>
+      <div class="series-hero-actions">
+        <a href="#series-brands" class="btn-primary">See All 40 Brands</a>
+        <a href="BBT Campaigns/zomatoCamp1.html" class="btn-ghost">
+          Day 01 → Zomato
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </a>
+      </div>
+      <div class="series-progress-strip">
+        <div class="progress-label">Series Progress</div>
+        <div class="progress-bar-outer">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-meta">
+          <span id="progressDay">Day 01 Live</span>
+          <span>40 Brands Total</span>
+        </div>
+      </div>
+    </div>
+    <div class="series-hero-right">
+      <div class="hero-bg-number">40</div>
+      <div class="hero-right-grid">
+        <div class="hero-stat-box">
+          <div class="hsb-num">40</div>
+          <div class="hsb-label">Brand Studies</div>
+          <div class="hsb-desc">Deep research on India's most iconic companies</div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hsb-num">40</div>
+          <div class="hsb-label">Consecutive Days</div>
+          <div class="hsb-desc">Published daily — no breaks, no compromises</div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hsb-num">8+</div>
+          <div class="hsb-label">Industries Covered</div>
+          <div class="hsb-desc">FMCG, FinTech, EdTech, D2C, Food-Tech & more</div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hsb-num">100%</div>
+          <div class="hsb-label">Original Research</div>
+          <div class="hsb-desc">Every study backed by BBT's analysis team</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS MARQUEE -->
+  <div class="brands-marquee">
+    <div class="bm-inner">
+      <span class="bm-item">Zomato</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Swiggy</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">CRED</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">boAt</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Flipkart</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Amul</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Cadbury</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Tanishq</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Jio</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Nykaa</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Zomato</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Swiggy</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">CRED</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">boAt</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Flipkart</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Amul</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Cadbury</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Tanishq</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Jio</span><span class="bm-item fill">✦</span>
+      <span class="bm-item">Nykaa</span><span class="bm-item fill">✦</span>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="series-ticker">
+    <div class="series-ticker-inner">
+      <span class="s-tick-item">Brand Strategy</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Campaign Analysis</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Growth Frameworks</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">SWOT Breakdown</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Market Insights</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Expert Verdict</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Indian Brands</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">BBT Research</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Brand Strategy</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Campaign Analysis</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Growth Frameworks</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">SWOT Breakdown</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Market Insights</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Expert Verdict</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">Indian Brands</span><span class="s-tick-dot">✦</span>
+      <span class="s-tick-item">BBT Research</span><span class="s-tick-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT SECTION ══ -->
+  <section class="what-section reveal" id="about-series">
+    <div>
+      <div class="what-label">// About the Series</div>
+      <div class="campaign-counter">
+        <div class="cc-header">Live Right Now</div>
+        <div class="cc-count" id="liveCount">01</div>
+        <div class="cc-of">of 40 case studies published</div>
+      </div>
+    </div>
+    <div>
+      <h2 class="what-heading">40 days. 40 brands.<br><em>Infinite intelligence.</em></h2>
+      <p class="what-text">The <strong style="color:var(--text)">40 Day | 40 Brand Series</strong> is BBT's most ambitious editorial campaign — publishing one deeply researched brand case study every single day for 40 consecutive days, focused exclusively on leading Indian brands.</p>
+      <p class="what-text">Each case study decodes a brand's marketing campaigns, business strategy, SWOT analysis, growth playbook, and expert insights — converting complex research into actionable intelligence for entrepreneurs, professionals, and marketers.</p>
+      <div class="what-pillars">
+        <span class="what-pillar">Brand Overview</span>
+        <span class="what-pillar">Campaign Analysis</span>
+        <span class="what-pillar">Strategy Breakdown</span>
+        <span class="what-pillar">SWOT Analysis</span>
+        <span class="what-pillar">Growth Insights</span>
+        <span class="what-pillar">Expert Verdict</span>
+        <span class="what-pillar">Lead CTA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VALUE CARDS ══ -->
+  <section class="value-section reveal">
+    <div class="value-header">
+      <p class="value-tag">// What You Get</p>
+      <h2 class="value-heading">Research that <em>works for you.</em></h2>
+    </div>
+    <div class="value-cards">
+      <div class="value-card">
+        <div class="vc-num">01</div>
+        <div class="vc-title">Deep Campaign Deconstruction</div>
+        <div class="vc-desc">Every brand's best campaigns broken down — what worked, why it worked, how it scaled, and what any brand can replicate right now.</div>
+      </div>
+      <div class="value-card">
+        <div class="vc-num">02</div>
+        <div class="vc-title">Strategic Frameworks</div>
+        <div class="vc-desc">Growth pillars, funnel architectures, retention loops, and positioning strategies extracted from each brand's playbook for direct application.</div>
+      </div>
+      <div class="value-card">
+        <div class="vc-num">03</div>
+        <div class="vc-title">Actionable Business Insights</div>
+        <div class="vc-desc">BBT's expert team distils every case study into practical takeaways — not theory, but tested intelligence that drives real business decisions.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FEATURED — DAY 01 ══ -->
+  <section class="featured-section reveal">
+    <div class="sg-header">
+      <h2 class="sg-title">Latest <em>Case Study</em></h2>
+      <div class="sg-meta"><span style="color:var(--gold);">Day 01 · Live Now</span><br>Updated daily</div>
+    </div>
+    <div class="featured-inner">
+      <div class="featured-left">
+        <div>
+          <div class="fl-tag">Latest Publish</div>
+          <div class="fl-day">Day 01 of 40</div>
+          <div class="fl-brand"><span style="color:var(--gold)">Zomato</span><br>Campaign</div>
+          <p class="fl-sub">How India's food-tech leader built explosive growth combining loyalty engines with cultural moment marketing — the Zomato Gold + ZPL masterclass.</p>
+        </div>
+        <div class="fl-actions">
+          <a href="BBT Campaigns/zomatoCamp1.html" class="btn-primary">Read Full Study</a>
+          <a href="#series-brands" class="btn-ghost">All Brands <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.2"/></svg></a>
+        </div>
+      </div>
+      <div class="featured-right">
+        <div class="fr-label">Key Takeaways — Zomato</div>
+        <div class="fr-insights">
+          <div class="fri-item">
+            <div class="fri-icon">👑</div>
+            <div><div class="fri-title">Dual Growth Engines</div><div class="fri-desc">Gold builds lifetime value. ZPL drives acquisition. Together they create unstoppable momentum.</div></div>
+          </div>
+          <div class="fri-item">
+            <div class="fri-icon">⚾</div>
+            <div><div class="fri-title">Own Cultural Moments</div><div class="fri-desc">ZPL didn't advertise during IPL — it became essential to the cricket + food ritual India loves.</div></div>
+          </div>
+          <div class="fri-item">
+            <div class="fri-icon">🔄</div>
+            <div><div class="fri-title">Immediate Reward Loops</div><div class="fri-desc">Instant savings + match-day cashback locked users into repeat ordering behavior at scale.</div></div>
+          </div>
+          <div class="fri-item">
+            <div class="fri-icon">📊</div>
+            <div><div class="fri-title">Campaign Rating: 9.4 / 10</div><div class="fri-desc">ZPL earns the highest cultural marketing score in Day 01 — setting the bar for the series.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ALL 40 BRANDS ══ -->
+  <section class="series-grid-section reveal" id="series-brands">
+    <div class="sg-header">
+      <h2 class="sg-title">All <em>40 Brands</em></h2>
+      <div class="sg-meta">1 published · 39 upcoming<br>New study every day</div>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All 40</button>
+      <button class="filter-btn" data-filter="food-tech">Food-Tech</button>
+      <button class="filter-btn" data-filter="fmcg">FMCG</button>
+      <button class="filter-btn" data-filter="fintech">FinTech</button>
+      <button class="filter-btn" data-filter="d2c">D2C</button>
+      <button class="filter-btn" data-filter="ecomm">E-Commerce</button>
+      <button class="filter-btn" data-filter="edtech">EdTech</button>
+    </div>
+
+    <div class="brands-grid" id="brandsGrid">
+      <a href="BBT Campaigns/zomatoCamp1.html"              class="brand-card" data-cat="food-tech"><div class="bc-day">Day 01</div><div class="bc-name">Zomato</div><div class="bc-industry">Food-Tech · Campaign Analysis</div><div class="bc-status live">Live Now</div></a>
+      <a href="swiggyCamp2.html"              class="brand-card" data-cat="food-tech"><div class="bc-day">Day 02</div><div class="bc-name">Swiggy</div><div class="bc-industry">Food Delivery · Brand Strategy</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="credCamp3.html"                class="brand-card" data-cat="fintech">  <div class="bc-day">Day 03</div><div class="bc-name">CRED</div><div class="bc-industry">FinTech · Premium Positioning</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="boatCamp4.html"                class="brand-card" data-cat="d2c">      <div class="bc-day">Day 04</div><div class="bc-name">boAt</div><div class="bc-industry">Consumer Electronics · D2C Growth</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="flipkartCamp5.html"            class="brand-card" data-cat="ecomm">    <div class="bc-day">Day 05</div><div class="bc-name">Flipkart</div><div class="bc-industry">E-Commerce · Retail Innovation</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="myntraCamp6.html"              class="brand-card" data-cat="ecomm">    <div class="bc-day">Day 06</div><div class="bc-name">Myntra</div><div class="bc-industry">Fashion E-comm · Campaign Study</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="dream11Camp7.html"             class="brand-card" data-cat="fintech">  <div class="bc-day">Day 07</div><div class="bc-name">Dream11</div><div class="bc-industry">Fantasy Sports · Virality Engine</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="messhoCamp8.html"              class="brand-card" data-cat="ecomm">    <div class="bc-day">Day 08</div><div class="bc-name">Meesho</div><div class="bc-industry">Social Commerce · Bharat Market</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="nobrokerCamp9.html"            class="brand-card" data-cat="d2c">      <div class="bc-day">Day 09</div><div class="bc-name">NoBroker</div><div class="bc-industry">PropTech · Disruptor Story</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="oyoCamp10.html"                class="brand-card" data-cat="d2c">      <div class="bc-day">Day 10</div><div class="bc-name">OYO</div><div class="bc-industry">Hospitality · Brand Turnaround</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="amulCamp11.html"               class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 11</div><div class="bc-name">Amul</div><div class="bc-industry">FMCG · Iconic Advertising Legacy</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="fevicolCamp12.html"            class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 12</div><div class="bc-name">Fevicol</div><div class="bc-industry">FMCG · Humour-Led Brand Building</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="surfexcelCamp13.html"          class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 13</div><div class="bc-name">Surf Excel</div><div class="bc-industry">FMCG · Emotional Marketing</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="cadburyCamp14.html"            class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 14</div><div class="bc-name">Cadbury</div><div class="bc-industry">FMCG · Occasion Marketing</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="airtelCamp15.html"             class="brand-card" data-cat="fintech">  <div class="bc-day">Day 15</div><div class="bc-name">Airtel</div><div class="bc-industry">Telecom · Premium Rebranding</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="tatateaCamp16.html"            class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 16</div><div class="bc-name">Tata Tea</div><div class="bc-industry">FMCG · Purpose-Led Marketing</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="asianpaintCamp17.html"         class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 17</div><div class="bc-name">Asian Paints</div><div class="bc-industry">FMCG · Home Storytelling</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="tanishqCamp18.html"            class="brand-card" data-cat="d2c">      <div class="bc-day">Day 18</div><div class="bc-name">Tanishq</div><div class="bc-industry">Jewellery · Heritage Branding</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="paperboatCamp19.html"          class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 19</div><div class="bc-name">Paper Boat</div><div class="bc-industry">Beverages · Nostalgia Marketing</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="maggiCamp20.html"              class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 20</div><div class="bc-name">Maggi</div><div class="bc-industry">FMCG · Crisis & Comeback Story</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="parlegCamp21.html"             class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 21</div><div class="bc-name">Parle-G</div><div class="bc-industry">FMCG · Mass Market Dominance</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="tatasaltCamp22.html"           class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 22</div><div class="bc-name">Tata Salt</div><div class="bc-industry">FMCG · Trust Branding</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="dettolCamp23.html"             class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 23</div><div class="bc-name">Dettol</div><div class="bc-industry">FMCG · Health & Safety Positioning</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="bajajCamp24.html"              class="brand-card" data-cat="d2c">      <div class="bc-day">Day 24</div><div class="bc-name">Bajaj</div><div class="bc-industry">Auto / Consumer · Legacy Brand</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="jioCamp25.html"                class="brand-card" data-cat="fintech">  <div class="bc-day">Day 25</div><div class="bc-name">Jio</div><div class="bc-industry">Telecom · Market Disruption</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="nykaaCamp26.html"              class="brand-card" data-cat="d2c">      <div class="bc-day">Day 26</div><div class="bc-name">Nykaa</div><div class="bc-industry">Beauty D2C · Platform Growth</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="mamaearthCamp27.html"          class="brand-card" data-cat="d2c">      <div class="bc-day">Day 27</div><div class="bc-name">Mamaearth</div><div class="bc-industry">D2C Beauty · Influencer Growth</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="sugarCamp28.html"              class="brand-card" data-cat="d2c">      <div class="bc-day">Day 28</div><div class="bc-name">Sugar Cosmetics</div><div class="bc-industry">Beauty D2C · Gen Z Strategy</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="lenskartCamp29.html"           class="brand-card" data-cat="d2c">      <div class="bc-day">Day 29</div><div class="bc-name">Lenskart</div><div class="bc-industry">Eyewear · Omnichannel Scale</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="policybazaarCamp30.html"       class="brand-card" data-cat="fintech">  <div class="bc-day">Day 30</div><div class="bc-name">Policybazaar</div><div class="bc-industry">InsurTech · Trust & Awareness</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="paytmCamp31.html"              class="brand-card" data-cat="fintech">  <div class="bc-day">Day 31</div><div class="bc-name">Paytm</div><div class="bc-industry">FinTech · Brand Resilience</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="phonepeCamp32.html"            class="brand-card" data-cat="fintech">  <div class="bc-day">Day 32</div><div class="bc-name">PhonePe</div><div class="bc-industry">FinTech · UPI Acquisition</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="byjusCamp33.html"              class="brand-card" data-cat="edtech">   <div class="bc-day">Day 33</div><div class="bc-name">BYJU'S</div><div class="bc-industry">EdTech · Rise, Scale & Lessons</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="bigbasketCamp34.html"          class="brand-card" data-cat="ecomm">    <div class="bc-day">Day 34</div><div class="bc-name">BigBasket</div><div class="bc-industry">Grocery E-comm · Category Leader</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="dunzoCamp35.html"              class="brand-card" data-cat="food-tech"><div class="bc-day">Day 35</div><div class="bc-name">Dunzo</div><div class="bc-industry">Quick Commerce · Hyperlocal Story</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="olaCamp36.html"                class="brand-card" data-cat="d2c">      <div class="bc-day">Day 36</div><div class="bc-name">Ola</div><div class="bc-industry">Mobility · Platform Strategy</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="patanjaliCamp37.html"          class="brand-card" data-cat="fmcg">     <div class="bc-day">Day 37</div><div class="bc-name">Patanjali</div><div class="bc-industry">FMCG · Ayurveda & Mass Market</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="chaayosCamp38.html"            class="brand-card" data-cat="food-tech"><div class="bc-day">Day 38</div><div class="bc-name">Chaayos</div><div class="bc-industry">F&B · Chai Culture Branding</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="boatproductCamp39.html"        class="brand-card" data-cat="d2c">      <div class="bc-day">Day 39</div><div class="bc-name">boAt</div><div class="bc-industry">Product Angle · D2C Innovation</div><div class="bc-status upcoming">Coming Soon</div></a>
+      <a href="mamaearthingredientCamp40.html" class="brand-card finale" data-cat="d2c"><div class="bc-day">Day 40 · Grand Finale</div><div class="bc-name">Mamaearth</div><div class="bc-industry">Ingredient Angle · Series Closer</div><div class="bc-status upcoming">The Grand Finale</div></a>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="series-cta reveal" id="series-cta">
+    <p class="scta-tag">// Brand Business Talk — BBT</p>
+    <h2 class="scta-heading">Want your brand<br><em>analysed like this?</em></h2>
+    <p class="scta-sub">At Brand Business Talk, we help brands with research, strategy, market insights, campaign analysis, and growth recommendations. Let's build your brand strategy together.</p>
+    <div class="scta-contacts">
+      <div class="scta-contact"><span class="scta-c-label">Call</span><span class="scta-c-value">8467886865</span></div>
+      <div class="scta-contact"><span class="scta-c-label">WhatsApp</span><span class="scta-c-value">9004390564</span></div>
+      <div class="scta-contact"><span class="scta-c-label">Email</span><span class="scta-c-value">brand.business.talks@gmail.com</span></div>
+    </div>
+    <div class="scta-actions">
+      <a href="mailto:brand.business.talks@gmail.com" class="btn-primary">Start Your Brand Analysis →</a>
+      <a href="../index.html" class="btn-ghost">Back to BBT <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.2"/></svg></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html"><img src="images/logo.jpeg" alt="logo" class="nav-logo"/></a>
+        <p class="footer-tagline">Brand Business Talk — where brands, businesses, and the market come to life.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">𝕏</a>
+          <a href="#" class="social-link">in</a>
+          <a href="#" class="social-link">ig</a>
+          <a href="#" class="social-link">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>40-Brand Series</h4>
+        <ul>
+          <li><a href="zomatoCamp1.html">Day 01 — Zomato</a></li>
+          <li><a href="swiggyCamp2.html">Day 02 — Swiggy</a></li>
+          <li><a href="credCamp3.html">Day 03 — CRED</a></li>
+          <li><a href="boatCamp4.html">Day 04 — boAt</a></li>
+          <li><a href="#series-brands">View All 40 →</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>BBT Content</h4>
+        <ul>
+          <li><a href="../index.html#coverage">Brand Strategy</a></li>
+          <li><a href="../index.html#coverage">Startup Stories</a></li>
+          <li><a href="../index.html#coverage">Market Trends</a></li>
+          <li><a href="../index.html#coverage">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../index.html#mission">About BBT</a></li>
+          <li><a href="../index.html#newsletter">Newsletter</a></li>
+          <li><a href="#series-cta">Work With Us</a></li>
+          <li><a href="mailto:brand.business.talks@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Brand Business Talk · 40 Day | 40 Brand Series</p>
+      <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Progress bar — update livePublished each day you go live
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const livePublished = 1; // ← CHANGE THIS NUMBER EACH DAY (1 to 40)
+        const fill = document.getElementById('progressFill');
+        const counter = document.getElementById('liveCount');
+        const dayLabel = document.getElementById('progressDay');
+        if (fill) fill.style.width = Math.max((livePublished / 40) * 100, 1.5) + '%';
+        if (counter) counter.textContent = String(livePublished).padStart(2, '0');
+        if (dayLabel) dayLabel.textContent = `Day ${String(livePublished).padStart(2, '0')} Live`;
+      }, 600);
+    });
+
+    // Category filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        document.querySelectorAll('.brand-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.cat === filter) ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
